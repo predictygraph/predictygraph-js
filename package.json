@@ -1,5 +1,5 @@
 {
-  "name": "predictygraph-js",
+  "name": "predictygraph",
   "version": "0.1.0",
   "description": "Render predictygraph (.pdg) diagrams to SVG in the browser, mermaid-style, with no runtime dependencies",
   "keywords": [
