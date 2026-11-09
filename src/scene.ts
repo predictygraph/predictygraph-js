@@ -3,6 +3,7 @@ import { type Elem, elem, type Geom, type Paint, type Scene, type Seg } from "./
 import { SUB_GAP } from "./layout.ts";
 import {
   type Box,
+  bbox,
   cx,
   cy,
   type Document,
@@ -16,20 +17,18 @@ import {
   walk,
 } from "./model.ts";
 import { type Diagonal, diagonalFrom, flowDir, lca, type Router, routeOf } from "./route.ts";
-import { or } from "./safe.ts";
+import { fmtG, last, or } from "./safe.ts";
 import { box4, px } from "./style.ts";
 import { accent, fontSize, hasTitleBand, LINE_H, nodePadding, textBlock, titlePosition } from "./styleutil.ts";
 
 const TITLE_PAD = 6;
 const ER_HEADS = ["one", "many", "zero-one", "zero-many", "one-many"];
 const STEP_ROOM = 3;
-const last = <T>(a: readonly T[]): T => a[a.length - 1] as T;
 const dist = (a: Pt, b: Pt): number => Math.hypot(a[0] - b[0], a[1] - b[1]);
 const pairs = (pts: readonly Pt[]): [Pt, Pt][] => pts.slice(1).map((p, i) => [pts[i] as Pt, p]);
 const polyLen = (pts: readonly Pt[]): number => pairs(pts).reduce((s, [a, b]) => s + dist(a, b), 0);
 const cls = (first: string, rest: string[] = []): string => [first, ...rest].join(" ");
 const g = (o: Geom, p: Paint = {}, k: Elem["kind"] = "rect", extra: Partial<Elem> = {}): Elem => elem(k, { geom: o, paint: p, ...extra });
-const fmtG = (n: number): string => String(Number.parseFloat(n.toPrecision(6)));
 const fixed = (n: number, d: number): string => n.toFixed(d);
 
 export function pointAlong(poly: Pt[], frac: number): Pt {
@@ -208,8 +207,7 @@ export class SceneBuilder {
     const depth = 8;
     const spans = this.doc.brackets.map((b) => {
       const items = b.ids.map((i) => this.doc.items.get(i) as Item);
-      const y0 = Math.min(...items.map((i) => i.ay));
-      const y1 = Math.max(...items.map((i) => i.ay + i.h));
+      const [, y0, , y1] = bbox(items);
       return { y0, y1, b, t: textBlock(b.label, b.style, 11) };
     });
     spans.sort((a, b) => a.y1 - a.y0 - (b.y1 - b.y0));

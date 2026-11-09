@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="522" height="227" viewBox="0 0 521.6 227" class="predictygraph">
+<rect x="0" y="0" width="521.6" height="227" fill="#282828"/>
+<g class="pdg-groups">
+<g id="f" class="pdg-group">
+<rect x="362.4" y="128.5" width="143.2" height="82.5" rx="10" fill="#312f2e" stroke="#665c54" stroke-width="1"/>
+<text x="376.4" y="153.9" text-anchor="start" fill="#a89984" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="12" font-weight="bold" font-style="normal">F (nested block)</text>
+</g>
+</g>
+<g class="pdg-edges">
+<g id="e0" class="pdg-edge">
+<path d="M 87.6 74 L 87.6 132.91" fill="none" stroke="#a89984" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="87.6,141.28 83.69,131.97 91.51,131.97" fill="#a89984" class="pdg-head"/>
+</g>
+<g id="e1" class="pdg-edge">
+<path d="M 260.8 74 L 260.8 144.63" fill="none" stroke="#a89984" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="260.8,153 256.89,143.7 264.71,143.7" fill="#a89984" class="pdg-head"/>
+</g>
+<g id="e2" class="pdg-edge">
+<path d="M 434 77.25 L 434 120.13" fill="none" stroke="#a89984" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="434,128.5 430.09,119.2 437.91,119.2" fill="#a89984" class="pdg-head"/>
+</g>
+</g>
+<g class="pdg-nodes">
+<g id="a" class="pdg-node yellow">
+<rect x="67.6" y="40.5" width="40" height="33.5" rx="6" fill="#56492a" stroke="#fabd2f" stroke-width="1.5"/>
+<text x="87.6" y="61.8" text-anchor="middle" fill="#ebdbb2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">A</text>
+</g>
+<g id="b" class="pdg-node">
+<rect x="200.8" y="40.5" width="120" height="33.5" rx="6" fill="#3c3836" stroke="#665c54" stroke-width="1.5"/>
+<text x="260.8" y="61.8" text-anchor="middle" fill="#ebdbb2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">B wide</text>
+</g>
+<g id="c" class="pdg-node red">
+<ellipse cx="434" cy="57.25" rx="20" ry="20" fill="#562f2b" stroke="#fb4934" stroke-width="1.5"/>
+<text x="434" y="61.8" text-anchor="middle" fill="#ebdbb2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">C</text>
+</g>
+<g id="d" class="pdg-node">
+<polygon points="87.6,141.28 116.72,169.75 87.6,198.22 58.48,169.75" fill="#3c3836" stroke="#665c54" stroke-width="1.5"/>
+<text x="87.6" y="174.3" text-anchor="middle" fill="#ebdbb2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">D</text>
+</g>
+<g id="e" class="pdg-node green">
+<rect x="240.8" y="153" width="40" height="33.5" rx="6" fill="#484828" stroke="#b8bb26" stroke-width="1.5"/>
+<text x="260.8" y="174.3" text-anchor="middle" fill="#ebdbb2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">E</text>
+</g>
+<g id="f1" class="pdg-node">
+<rect x="377.2" y="163.5" width="44.8" height="33.5" rx="6" fill="#3c3836" stroke="#665c54" stroke-width="1.5"/>
+<text x="399.6" y="184.8" text-anchor="middle" fill="#ebdbb2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">F1</text>
+</g>
+<g id="f2" class="pdg-node">
+<rect x="446" y="163.5" width="44.8" height="33.5" rx="6" fill="#3c3836" stroke="#665c54" stroke-width="1.5"/>
+<text x="468.4" y="184.8" text-anchor="middle" fill="#ebdbb2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">F2</text>
+</g>
+</g>
+</svg>

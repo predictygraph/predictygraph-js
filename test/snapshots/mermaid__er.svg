@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="595" height="168" viewBox="0 0 594.7 167.71" class="predictygraph">
+<rect x="0" y="0" width="594.7" height="167.71" fill="#282a36"/>
+<g class="pdg-groups">
+
+</g>
+<g class="pdg-edges">
+<g id="e0" class="pdg-edge">
+<path d="M 128 75.71 L 211.95 75.71" fill="none" stroke="#bd93f9" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<g class="pdg-head">
+<polyline points="211.95,79.62 202.65,75.71 211.95,71.8" fill="none" stroke="#bd93f9" stroke-width="1.5"/>
+<circle cx="198" cy="75.71" r="2.34" fill="#282a36" stroke="#bd93f9" stroke-width="1.5"/>
+</g>
+<g class="pdg-head">
+<polyline points="128,71.8 137.3,75.71 128,79.62" fill="none" stroke="#bd93f9" stroke-width="1.5"/>
+<circle cx="141.95" cy="75.71" r="2.34" fill="#282a36" stroke="#bd93f9" stroke-width="1.5"/>
+</g>
+<rect x="167.11" y="67.84" width="45.6" height="15.75" rx="3" fill="#282a36" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="189.91" y="79.29" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">places</text>
+</g>
+<g id="e1" class="pdg-edge">
+<path d="M 365.95 57.48 L 449.9 57.48" fill="none" stroke="#bd93f9" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<g class="pdg-head">
+<polyline points="449.9,61.39 440.6,57.48 449.9,53.57" fill="none" stroke="#bd93f9" stroke-width="1.5"/>
+<polyline points="437.81,61.39 437.81,53.57" fill="none" stroke="#bd93f9" stroke-width="1.5"/>
+</g>
+<g class="pdg-head">
+<polyline points="365.95,53.57 375.25,57.48 365.95,61.39" fill="none" stroke="#bd93f9" stroke-width="1.5"/>
+<polyline points="378.04,53.57 378.04,61.39" fill="none" stroke="#bd93f9" stroke-width="1.5"/>
+</g>
+<rect x="378.52" y="49.61" width="58.8" height="15.75" rx="3" fill="#282a36" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="407.92" y="61.06" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">contains</text>
+</g>
+<g id="e2" class="pdg-edge">
+<path d="M 128 126.21 L 207.75 126.21" fill="none" stroke="#bd93f9" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4" class="pdg-line"/>
+<g class="pdg-head">
+<polyline points="207.75,130.12 198.45,126.21 207.75,122.3" fill="none" stroke="#bd93f9" stroke-width="1.5"/>
+<polyline points="195.66,130.12 195.66,122.3" fill="none" stroke="#bd93f9" stroke-width="1.5"/>
+</g>
+<g class="pdg-head">
+<polyline points="128,122.3 137.3,126.21 128,130.12" fill="none" stroke="#bd93f9" stroke-width="1.5"/>
+<polyline points="140.09,122.3 140.09,130.12" fill="none" stroke="#bd93f9" stroke-width="1.5"/>
+</g>
+<rect x="171.61" y="118.34" width="32.4" height="15.75" rx="3" fill="#282a36" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="187.81" y="129.79" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">uses</text>
+</g>
+</g>
+<g class="pdg-nodes">
+<g id="CUSTOMER" class="pdg-node">
+<rect x="16" y="52.46" width="112" height="86" rx="6" fill="#44475a" stroke="#bd93f9" stroke-width="1.5"/>
+<text x="72" y="73.76" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">CUSTOMER</text>
+<text x="72" y="91.26" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">name</text>
+<text x="72" y="108.76" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">custNumber</text>
+<text x="72" y="126.26" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">sector</text>
+</g>
+<g id="ORDER" class="pdg-node">
+<rect x="211.95" y="21.71" width="154" height="68.5" rx="6" fill="#44475a" stroke="#bd93f9" stroke-width="1.5"/>
+<text x="288.95" y="43.01" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">ORDER</text>
+<text x="288.95" y="60.51" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">orderNumber</text>
+<text x="288.95" y="78.01" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">deliveryAddress</text>
+</g>
+<g id="LINE_ITEM" class="pdg-node">
+<rect x="449.9" y="16" width="128.8" height="86" rx="6" fill="#44475a" stroke="#bd93f9" stroke-width="1.5"/>
+<text x="514.3" y="37.3" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">LINE-ITEM</text>
+<text x="514.3" y="54.8" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">productCode</text>
+<text x="514.3" y="72.3" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">quantity</text>
+<text x="514.3" y="89.8" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">pricePerUnit</text>
+</g>
+<g id="DELIVERY_ADDRESS" class="pdg-node">
+<rect x="207.75" y="118.21" width="162.4" height="33.5" rx="6" fill="#44475a" stroke="#bd93f9" stroke-width="1.5"/>
+<text x="288.95" y="139.51" text-anchor="middle" fill="#f8f8f2" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">DELIVERY-ADDRESS</text>
+</g>
+</g>
+</svg>

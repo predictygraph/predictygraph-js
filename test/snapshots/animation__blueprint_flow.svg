@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1084" height="502" viewBox="0 0 1084.3 502.25" class="predictygraph">
+<rect x="0" y="0" width="1084.3" height="502.25" fill="#2e3440"/>
+<g class="pdg-groups">
+<g id="tenants" class="pdg-group">
+<rect x="16" y="16" width="450.8" height="108.5" rx="10" fill="#343a48" stroke="#81a1c1" stroke-width="1"/>
+<text x="30" y="40.45" text-anchor="start" fill="#d8dee9" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">TENANTS</text>
+</g>
+<g id="cp" class="pdg-group">
+<rect x="282.3" y="158.5" width="786" height="108.5" rx="10" fill="#343a48" stroke="#81a1c1" stroke-width="1"/>
+<text x="376.7" y="182.95" text-anchor="start" fill="#d8dee9" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">CONTROL PLANE</text>
+</g>
+<g id="lower" class="pdg-group bare">
+<rect x="19.85" y="301" width="901.6" height="185.25" rx="10" fill="none" stroke="none" stroke-width="1"/>
+<g id="pools" class="pdg-group">
+<rect x="19.85" y="301" width="614.4" height="185.25" rx="10" fill="#343a48" stroke="#81a1c1" stroke-width="1"/>
+<text x="33.85" y="325.45" text-anchor="start" fill="#d8dee9" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">NODE POOLS</text>
+</g>
+<g id="obs" class="pdg-group">
+<rect x="662.25" y="301" width="259.2" height="185.25" rx="10" fill="#343a48" stroke="#81a1c1" stroke-width="1"/>
+<text x="676.25" y="325.45" text-anchor="start" fill="#d8dee9" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">OBSERVE AND SELL</text>
+</g>
+</g>
+</g>
+<g class="pdg-edges">
+<g id="e0" class="pdg-edge">
+<path d="M 260.6 80.13 L 276.23 80.13" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="284.6,80.13 275.3,84.03 275.3,76.22" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e1" class="pdg-edge pdg-flow pdg-flow-forward">
+<path d="M 377.7 110.5 L 377.7 129.5 Q 377.7 141.5 389.7 141.5 L 546.8 141.5 Q 558.8 141.5 558.8 153.5 L 558.8 183.88" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="0.75" stroke-opacity="0.3" class="pdg-line"/>
+<path d="M 377.7 110.5 L 377.7 129.5 Q 377.7 141.5 389.7 141.5 L 546.8 141.5 Q 558.8 141.5 558.8 153.5 L 558.8 183.88" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="2.7" stroke-dasharray="0.1 6" stroke-linecap="round" stroke-dashoffset="6.1" class="pdg-line pdg-flow-forward"><animate attributeName="stroke-dashoffset" values="6.1;0" dur="1.2s" repeatCount="indefinite"/></path>
+<polygon points="558.8,192.25 554.89,182.95 562.71,182.95" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e2" class="pdg-edge">
+<path d="M 359.7 110.5 L 359.7 130.64 Q 359.7 137 364.2 141.5 L 364.2 141.5 Q 368.7 146 368.7 152.36 L 368.7 183.88" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4" class="pdg-line"/>
+<polygon points="368.7,192.25 364.79,182.95 372.61,182.95" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e3" class="pdg-edge pdg-flow pdg-flow-forward">
+<path d="M 658.5 222.63 L 668.13 222.63" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="0.75" stroke-opacity="0.3" class="pdg-line"/>
+<path d="M 658.5 222.63 L 668.13 222.63" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="2.7" stroke-dasharray="0.1 6" stroke-linecap="round" stroke-dashoffset="6.1" class="pdg-line pdg-flow-forward"><animate attributeName="stroke-dashoffset" values="6.1;0" dur="1.2s" repeatCount="indefinite"/></path>
+<polygon points="676.5,222.63 667.2,226.53 667.2,218.72" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e4" class="pdg-edge">
+<path d="M 907.1 222.63 L 925.1 222.63" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 4" class="pdg-line"/>
+</g>
+<g id="e5" class="pdg-edge pdg-flow pdg-flow-forward">
+<path d="M 782.8 253 L 782.8 276.5 Q 782.8 288.5 770.8 288.5 L 197.45 288.5 Q 185.45 288.5 185.45 300.5 L 185.45 326.38" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="0.75" stroke-opacity="0.3" class="pdg-line"/>
+<path d="M 782.8 253 L 782.8 276.5 Q 782.8 288.5 770.8 288.5 L 197.45 288.5 Q 185.45 288.5 185.45 300.5 L 185.45 326.38" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="2.7" stroke-dasharray="0.1 6" stroke-linecap="round" stroke-dashoffset="6.1" class="pdg-line pdg-flow-forward"><animate attributeName="stroke-dashoffset" values="6.1;0" dur="1.2s" repeatCount="indefinite"/></path>
+<polygon points="185.45,334.75 181.54,325.45 189.36,325.45" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e6" class="pdg-edge">
+<path d="M 368.7 253 L 368.7 267.5 Q 368.7 279.5 356.7 279.5 L 179.45 279.5 Q 167.45 279.5 167.45 291.5 L 167.45 326.38" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" stroke-dasharray="5 4" class="pdg-line"/>
+<polygon points="167.45,334.75 163.54,325.45 171.36,325.45" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e7" class="pdg-edge pdg-flow pdg-flow-forward">
+<path d="M 176.45 395.5 L 176.45 403.13" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="0.75" stroke-opacity="0.3" class="pdg-line"/>
+<path d="M 176.45 395.5 L 176.45 403.13" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="2.7" stroke-dasharray="0.1 6" stroke-linecap="round" stroke-dashoffset="6.1" class="pdg-line pdg-flow-forward"><animate attributeName="stroke-dashoffset" values="6.1;0" dur="1.2s" repeatCount="indefinite"/></path>
+<polygon points="176.45,411.5 172.54,402.2 180.36,402.2" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e8" class="pdg-edge pdg-flow pdg-flow-forward">
+<path d="M 319.05 365.13 L 718.88 365.13" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="0.75" stroke-opacity="0.3" class="pdg-line"/>
+<path d="M 319.05 365.13 L 718.88 365.13" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="2.7" stroke-dasharray="0.1 6" stroke-linecap="round" stroke-dashoffset="6.1" class="pdg-line pdg-flow-forward"><animate attributeName="stroke-dashoffset" values="6.1;0" dur="2s" repeatCount="indefinite"/></path>
+<polygon points="727.25,365.13 717.95,369.03 717.95,361.22" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e9" class="pdg-edge pdg-flow pdg-flow-forward">
+<path d="M 800.8 253 L 800.8 273.2 Q 800.8 279.52 796.32 284 L 796.32 284 Q 791.85 288.48 791.85 294.8 L 791.85 326.38" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="0.75" stroke-opacity="0.3" class="pdg-line"/>
+<path d="M 800.8 253 L 800.8 273.2 Q 800.8 279.52 796.32 284 L 796.32 284 Q 791.85 288.48 791.85 294.8 L 791.85 326.38" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="2.7" stroke-dasharray="0.1 6" stroke-linecap="round" stroke-dashoffset="6.1" class="pdg-line pdg-flow-forward"><animate attributeName="stroke-dashoffset" values="6.1;0" dur="2s" repeatCount="indefinite"/></path>
+<polygon points="791.85,334.75 787.94,325.45 795.76,325.45" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e10" class="pdg-edge">
+<path d="M 791.85 395.5 L 791.85 403.13" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="791.85,411.5 787.94,402.2 795.76,402.2" fill="#88c0d0" class="pdg-head"/>
+</g>
+</g>
+<g class="pdg-nodes">
+<g id="ns" class="pdg-node red">
+<rect x="30" y="49.75" width="230.6" height="60.75" rx="6" fill="#4e3e49" stroke="#bf616a" stroke-width="1.5"/>
+<text x="40" y="68.1" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">ResourceQuota per namespace</text>
+<text x="40" y="84.35" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">limits.nvidia.com/gpumem</text>
+<text x="40" y="100.6" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">limits.nvidia.com/gpucores</text>
+</g>
+<g id="pod" class="pdg-node red">
+<rect x="284.6" y="49.75" width="168.2" height="60.75" rx="6" fill="#4e3e49" stroke="#bf616a" stroke-width="1.5"/>
+<text x="294.6" y="68.1" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">1  tenant pod</text>
+<text x="294.6" y="84.35" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">nvidia.com/gpu</text>
+<text x="294.6" y="100.6" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">+ gpumem + gpucores</text>
+</g>
+<g id="dra" class="pdg-node cyan">
+<rect x="296.3" y="192.25" width="144.8" height="60.75" rx="6" fill="#425360" stroke="#88c0d0" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="306.3" y="210.6" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">HAMi-DRA (later)</text>
+<text x="306.3" y="226.85" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">ResourceClaims</text>
+<text x="306.3" y="243.1" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">K8s 1.34+</text>
+</g>
+<g id="wh" class="pdg-node cyan">
+<rect x="459.1" y="192.25" width="199.4" height="60.75" rx="6" fill="#425360" stroke="#88c0d0" stroke-width="1.5"/>
+<text x="469.1" y="210.6" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">2  webhook vgpu.hami.io</text>
+<text x="469.1" y="226.85" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">sets schedulerName:</text>
+<text x="469.1" y="243.1" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">hami-scheduler</text>
+</g>
+<g id="sch" class="pdg-node cyan">
+<rect x="676.5" y="192.25" width="230.6" height="60.75" rx="6" fill="#425360" stroke="#88c0d0" stroke-width="1.5" stroke-opacity="1"><animate attributeName="stroke-opacity" values="1;0.35;1" dur="1.6s" repeatCount="indefinite"/><animate attributeName="stroke-width" values="1.5;3.3;1.5" dur="1.6s" repeatCount="indefinite"/></rect>
+<text x="686.5" y="210.6" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">3  hami-scheduler pod :9395</text>
+<text x="686.5" y="226.85" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">kube-scheduler</text>
+<text x="686.5" y="243.1" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">+ vgpu-scheduler-extender</text>
+</g>
+<g id="bs" class="pdg-node">
+<rect x="925.1" y="192.25" width="129.2" height="60.75" rx="6" fill="#3b4252" stroke="#81a1c1" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="935.1" y="210.6" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">optional brain</text>
+<text x="935.1" y="226.85" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">Volcano</text>
+<text x="935.1" y="243.1" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">Kueue / KAI</text>
+</g>
+<g id="nv" class="pdg-node green">
+<rect x="33.85" y="334.75" width="285.2" height="60.75" rx="6" fill="#485251" stroke="#a3be8c" stroke-width="1.5"/>
+<text x="43.85" y="353.1" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">4  NVIDIA nodes, gpu=on</text>
+<text x="43.85" y="369.35" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">hami-device-plugin DaemonSet</text>
+<text x="43.85" y="385.6" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">device-plugin + vgpu-monitor :9394</text>
+</g>
+<g id="core" class="pdg-node yellow">
+<rect x="65.05" y="411.5" width="222.8" height="60.75" rx="6" fill="#585550" stroke="#ebcb8b" stroke-width="1.5"/>
+<text x="75.05" y="429.85" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">5  libvgpu.so in the pod</text>
+<text x="75.05" y="446.1" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">via /etc/ld.so.preload</text>
+<text x="75.05" y="462.35" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">caps memory, paces compute</text>
+</g>
+<g id="oth" class="pdg-node green">
+<rect x="366.25" y="411.5" width="222.8" height="60.75" rx="6" fill="#485251" stroke="#a3be8c" stroke-width="1.5"/>
+<text x="376.25" y="429.85" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">Ascend / Kunlunxin / Hygon</text>
+<text x="376.25" y="446.1" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">own limiter: vNPU-Core,</text>
+<text x="376.25" y="462.35" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">vXPU, vDCU</text>
+</g>
+<g id="prom" class="pdg-node">
+<rect x="727.25" y="334.75" width="129.2" height="60.75" rx="6" fill="#3b4252" stroke="#81a1c1" stroke-width="1.5"/>
+<text x="737.25" y="353.1" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">6  Prometheus</text>
+<text x="737.25" y="369.35" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">:9395 reserved</text>
+<text x="737.25" y="385.6" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">:9394 used</text>
+</g>
+<g id="out" class="pdg-node">
+<rect x="684.35" y="411.5" width="215" height="60.75" rx="6" fill="#3b4252" stroke="#81a1c1" stroke-width="1.5"/>
+<text x="694.35" y="429.85" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">allocation vs utilization</text>
+<text x="694.35" y="446.1" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">KEDA scaling</text>
+<text x="694.35" y="462.35" text-anchor="start" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">metering, billing</text>
+</g>
+</g>
+</svg>

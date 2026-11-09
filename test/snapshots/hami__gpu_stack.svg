@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="744" height="584" viewBox="0 0 743.8 583.75" class="predictygraph">
+<rect x="0" y="0" width="743.8" height="583.75" fill="#ffffff"/>
+<g class="pdg-groups">
+<g id="l5" class="pdg-group tier">
+<rect x="16" y="16" width="711.8" height="83.75" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="43.3" text-anchor="start" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="bold" font-style="normal">Layer 5: Kubernetes Scheduling</text>
+</g>
+<g id="l4" class="pdg-group tier">
+<rect x="16" y="113.75" width="711.8" height="83.75" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="141.05" text-anchor="start" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="bold" font-style="normal">Layer 4: Container Runtime</text>
+</g>
+<g id="l3" class="pdg-group tier">
+<rect x="16" y="211.5" width="711.8" height="83.75" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="238.8" text-anchor="start" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="bold" font-style="normal">Layer 3: User-Space Libraries/Tools</text>
+</g>
+<g id="l2" class="pdg-group tier">
+<rect x="16" y="309.25" width="711.8" height="83.75" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="336.55" text-anchor="start" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="bold" font-style="normal">Layer 2: Kernel Driver</text>
+</g>
+<g id="l1" class="pdg-group tier">
+<rect x="16" y="407" width="711.8" height="83.75" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="434.3" text-anchor="start" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="bold" font-style="normal">Layer 1: Hardware</text>
+</g>
+</g>
+<g class="pdg-edges">
+
+</g>
+<g class="pdg-nodes">
+<g id="k8s_sched" class="pdg-node">
+<rect x="30" y="53.5" width="188" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="124" y="73.85" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">Kubernetes Scheduler</text>
+</g>
+<g id="hami_sched" class="pdg-node hami">
+<rect x="230" y="53.5" width="141.2" height="32.25" rx="10" fill="#16a34a" stroke="#16a34a" stroke-width="1.5"/>
+<text x="300.6" y="73.85" text-anchor="middle" fill="#ffffff" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="600" font-style="normal">HAMi Scheduler</text>
+</g>
+<g id="pod" class="pdg-node">
+<rect x="383.2" y="53.5" width="55.4" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="410.9" y="73.85" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">Pod</text>
+</g>
+<g id="containerd" class="pdg-node">
+<rect x="30" y="151.25" width="110" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="85" y="171.6" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">containerd</text>
+</g>
+<g id="nct" class="pdg-node">
+<rect x="152" y="151.25" width="219.2" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="261.6" y="171.6" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">NVIDIA Container Toolkit</text>
+</g>
+<g id="container" class="pdg-node">
+<rect x="383.2" y="151.25" width="102.2" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="434.3" y="171.6" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">Container</text>
+</g>
+<g id="cuda" class="pdg-node">
+<rect x="30" y="249" width="203.6" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="131.8" y="269.35" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">CUDA Runtime / Toolkit</text>
+</g>
+<g id="nvml" class="pdg-node">
+<rect x="245.6" y="249" width="203.6" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="347.4" y="269.35" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">NVML (libnvidia-ml.so)</text>
+</g>
+<g id="smi" class="pdg-node">
+<rect x="461.2" y="249" width="110" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="516.2" y="269.35" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">nvidia-smi</text>
+</g>
+<g id="dcgm" class="pdg-node">
+<rect x="583.2" y="249" width="63.2" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="614.8" y="269.35" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">DCGM</text>
+</g>
+<g id="mig" class="pdg-node">
+<rect x="658.4" y="249" width="55.4" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="686.1" y="269.35" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">MIG</text>
+</g>
+<g id="ko" class="pdg-node">
+<rect x="30" y="346.75" width="227" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="143.5" y="367.1" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">nvidia.ko (Kernel Module)</text>
+</g>
+<g id="uvm" class="pdg-node">
+<rect x="269" y="346.75" width="133.4" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="335.7" y="367.1" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">nvidia-uvm.ko</text>
+</g>
+<g id="modeset" class="pdg-node">
+<rect x="414.4" y="346.75" width="164.6" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="496.7" y="367.1" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">nvidia-modeset.ko</text>
+</g>
+<g id="gpu" class="pdg-node">
+<rect x="30" y="444.5" width="110" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="85" y="464.85" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">NVIDIA GPU</text>
+</g>
+<g id="pcie" class="pdg-node">
+<rect x="152" y="444.5" width="94.4" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="199.2" y="464.85" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">PCIe Bus</text>
+</g>
+<g id="nvlink" class="pdg-node">
+<rect x="258.4" y="444.5" width="164.6" height="32.25" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="340.7" y="464.85" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="normal" font-style="normal">NVLink (Optional)</text>
+</g>
+</g>
+<g class="pdg-legend">
+<rect x="14" y="506.75" width="293.8" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" class="pdg-legend-box"/>
+<rect x="24" y="516.75" width="14" height="14" rx="4" fill="#16a34a" stroke="#16a34a" stroke-width="1.2" class="pdg-legend-swatch hami"/>
+<text x="44" y="527.33" text-anchor="start" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">HAMi component</text>
+<rect x="152.4" y="516.75" width="14" height="14" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" class="pdg-legend-swatch plain"/>
+<text x="172.4" y="527.33" text-anchor="start" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">Kubernetes / NVIDIA</text>
+</g>
+<g class="pdg-caption">
+<text x="371.9" y="566.15" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="12" font-weight="normal" font-style="italic">Where HAMi sits in the GPU stack</text>
+</g>
+</svg>

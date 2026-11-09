@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="132" height="392" viewBox="0 0 132.28 392.5" class="predictygraph">
+<rect x="0" y="0" width="132.28" height="392.5" fill="#2e3440"/>
+<g class="pdg-groups">
+
+</g>
+<g class="pdg-edges">
+<g id="e0" class="pdg-edge">
+<path d="M 81.28 34 L 81.28 81.63" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="81.28,90 77.37,80.7 85.18,80.7" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e1" class="pdg-edge">
+<path d="M 90.28 123.5 L 90.28 132.5 Q 90.28 141.5 93.1 150.04 L 104.63 184.86 Q 108.4 196.25 108.19 208.25 L 107.04 273.75 Q 106.82 285.75 101.27 296.39 L 86.78 324.15 Q 82.62 332.13 82.62 341.13 L 82.62 350.13" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="82.62,358.5 78.71,349.2 86.52,349.2" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e2" class="pdg-edge">
+<path d="M 72.28 131.87 L 72.28 142.96 Q 72.28 151.5 63.74 151.5 L 63.74 151.5 Q 55.2 151.5 55.2 160.04 L 55.2 171.13" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="55.2,179.5 51.29,170.2 59.11,170.2" fill="#88c0d0" class="pdg-head"/>
+<polygon points="72.28,123.5 76.18,132.8 68.37,132.8" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e3" class="pdg-edge">
+<path d="M 56.51 213 L 56.51 260.63" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="56.51,269 52.61,259.7 60.42,259.7" fill="#88c0d0" class="pdg-head"/>
+</g>
+<g id="e4" class="pdg-edge">
+<path d="M 57.82 302.5 L 57.82 318.5 Q 57.82 330.5 69.82 330.5 L 72.8 330.5 Q 82.62 330.5 82.62 340.31 L 82.62 350.13" fill="none" stroke="#88c0d0" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="82.62,358.5 78.71,349.2 86.52,349.2" fill="#88c0d0" class="pdg-head"/>
+</g>
+</g>
+<g class="pdg-nodes">
+<g id="start" class="pdg-node solid">
+<ellipse cx="81.28" cy="25" rx="9" ry="9" fill="#eceff4" stroke="#eceff4" stroke-width="1.5"/>
+</g>
+<g id="Still" class="pdg-node">
+<rect x="46.28" y="90" width="70" height="33.5" rx="10" fill="#3b4252" stroke="#81a1c1" stroke-width="1.5"/>
+<text x="81.28" y="111.3" text-anchor="middle" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Still</text>
+</g>
+<g id="Moving" class="pdg-node">
+<rect x="16" y="179.5" width="78.4" height="33.5" rx="10" fill="#3b4252" stroke="#81a1c1" stroke-width="1.5"/>
+<text x="55.2" y="200.8" text-anchor="middle" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Moving</text>
+</g>
+<g id="Crash" class="pdg-node red">
+<rect x="22.82" y="269" width="70" height="33.5" rx="10" fill="#4e3e49" stroke="#bf616a" stroke-width="1.5"/>
+<text x="57.82" y="290.3" text-anchor="middle" fill="#eceff4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Crash</text>
+</g>
+<g id="stop" class="pdg-node solid">
+<ellipse cx="82.62" cy="367.5" rx="9" ry="9" fill="#eceff4" stroke="#eceff4" stroke-width="1.5"/>
+</g>
+</g>
+</svg>

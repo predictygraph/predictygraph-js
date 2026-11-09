@@ -1,7 +1,24 @@
 import type { Seg } from "./ir.ts";
 import { directChild } from "./layout.ts";
-import { bump, type Document, type Edge, type Group, type Item, isGroup, type Pt, type Style, walk } from "./model.ts";
-import { copysign } from "./safe.ts";
+import {
+  ancestors,
+  bbox,
+  bump,
+  centre,
+  cx,
+  cy,
+  type Document,
+  type Edge,
+  ends,
+  type Group,
+  half,
+  type Item,
+  isGroup,
+  type Pt,
+  type Style,
+  walk,
+} from "./model.ts";
+import { copysign, last } from "./safe.ts";
 import { px } from "./style.ts";
 
 export const LANE = 9;
@@ -9,22 +26,13 @@ export const CLEAR = 12;
 const RECT_SHAPES = ["box", "square", "round", "pill", "cylinder", "note", "image", "none"];
 const ROUND_SHAPES = ["circle", "ellipse", "diamond"];
 
-const last = <T>(a: readonly T[]): T => a[a.length - 1] as T;
 const shapeOf = (n: Item): string => n.attrs.shape ?? "box";
-const cxOf = (n: Item): number => n.ax + n.w / 2;
-const cyOf = (n: Item): number => n.ay + n.h / 2;
 export const routeOf = (e: Edge): string => e.style.route ?? "curve";
 export const spread = (e: Edge): boolean => (e.style.fan ?? "").trim() === "spread";
 
-export function ancestorsOf(i: Item): Group[] {
-  const out: Group[] = [];
-  for (let p = i.parent; p; p = p.parent) out.push(p);
-  return out;
-}
-
 export function lca(a: Item, b: Item, root: Group): Group {
-  const bb = new Set<Item>([b, ...ancestorsOf(b)]);
-  return [a, ...ancestorsOf(a)].find((x): x is Group => bb.has(x) && isGroup(x)) ?? root;
+  const bb = new Set<Item>([b, ...ancestors(b)]);
+  return [a, ...ancestors(a)].find((x): x is Group => bb.has(x) && isGroup(x)) ?? root;
 }
 
 export function flowDir(g: Group): string {
@@ -34,29 +42,29 @@ export function flowDir(g: Group): string {
 
 /** Intersection of ray centre->(tx,ty) with the node outline. */
 function boundaryPoint(n: Item, tx: number, ty: number, shape: string): Pt {
-  const [cx, cy] = [cxOf(n), cyOf(n)];
-  const [dx, dy] = [tx - cx, ty - cy];
-  if (dx === 0 && dy === 0) return [cx, cy];
-  const [hw, hh] = [n.w / 2, n.h / 2];
+  const [mx, my] = centre(n);
+  const [dx, dy] = [tx - mx, ty - my];
+  if (dx === 0 && dy === 0) return [mx, my];
+  const [hw, hh] = half(n);
   const t =
     shape === "circle" || shape === "ellipse"
       ? 1 / Math.sqrt((dx / hw) ** 2 + (dy / hh) ** 2)
       : shape === "diamond"
         ? 1 / (Math.abs(dx) / hw + Math.abs(dy) / hh)
         : Math.min(dx ? hw / Math.abs(dx) : Number.POSITIVE_INFINITY, dy ? hh / Math.abs(dy) : Number.POSITIVE_INFINITY);
-  return [cx + dx * t, cy + dy * t];
+  return [mx + dx * t, my + dy * t];
 }
 
 export function port(n: Item, side: string): Pt {
   switch (side) {
     case "top":
-      return [cxOf(n), n.ay];
+      return [cx(n), n.ay];
     case "bottom":
-      return [cxOf(n), n.ay + n.h];
+      return [cx(n), n.ay + n.h];
     case "left":
-      return [n.ax, cyOf(n)];
+      return [n.ax, cy(n)];
     default:
-      return [n.ax + n.w, cyOf(n)];
+      return [n.ax + n.w, cy(n)];
   }
 }
 
@@ -64,11 +72,11 @@ export function port(n: Item, side: string): Pt {
 function onOutline(n: Item, p: Pt, vert: boolean): Pt {
   const shape = shapeOf(n);
   if (isGroup(n) || !ROUND_SHAPES.includes(shape)) return p;
-  const [hw, hh] = [n.w / 2, n.h / 2];
-  const [cx, cy] = [cxOf(n), cyOf(n)];
+  const [hw, hh] = half(n);
+  const [mx, my] = centre(n);
   const reach = (u: number, half: number): number => half * (shape !== "diamond" ? Math.sqrt(1 - u * u) : 1 - u);
-  if (vert) return [p[0], cy + copysign(reach(Math.min(Math.abs(p[0] - cx) / hw, 1), hh), p[1] - cy)];
-  return [cx + copysign(reach(Math.min(Math.abs(p[1] - cy) / hh, 1), hw), p[0] - cx), p[1]];
+  if (vert) return [p[0], my + copysign(reach(Math.min(Math.abs(p[0] - mx) / hw, 1), hh), p[1] - my)];
+  return [mx + copysign(reach(Math.min(Math.abs(p[1] - my) / hh, 1), hw), p[0] - mx), p[1]];
 }
 
 /** When may a bend/ortho jog be a slant instead of a right-angle step? */
@@ -205,16 +213,16 @@ export class Router {
         if (e.attrs.exit || e.attrs.enter) continue;
         const [pts, axis] = this.geometry(e);
         if (axis !== "v" && axis !== "h") continue;
-        const [a, b] = [this.item(e.src), this.item(e.dst)];
+        const [a, b] = ends(this.doc, e);
         const sp = spread(e);
         if (flowDir(lca(a, b, this.doc.root)) === "auto" || (["straight", "ortho"].includes(routeOf(e)) && !sp)) continue;
         const i = axis === "v" ? 0 : 1;
         const [p0, pn] = [pts[0] as Pt, last(pts)];
-        const ends: [number, Item, Pt, Pt][] = [
+        const endPts: [number, Item, Pt, Pt][] = [
           [0, a, p0, pts.length > 2 ? (pts[1] as Pt) : pn],
           [1, b, pn, pts.length > 2 ? (pts[pts.length - 2] as Pt) : p0],
         ];
-        for (const [end, node, here, there] of ends) {
+        for (const [end, node, here, there] of endPts) {
           const side = axis === "v" ? (there[1] > here[1] ? "bottom" : "top") : there[0] > here[0] ? "right" : "left";
           const k = gk(node.id, side as unknown as number);
           const slot = sides.get(k) ?? { node: node.id, list: [] };
@@ -344,10 +352,10 @@ export class Router {
 
   private ports(a: Item, b: Item, vert: boolean): [Pt, Pt] {
     if (vert) {
-      const down = cyOf(b) > cyOf(a);
+      const down = cy(b) > cy(a);
       return [port(a, down ? "bottom" : "top"), port(b, down ? "top" : "bottom")];
     }
-    const right = cxOf(b) > cxOf(a);
+    const right = cx(b) > cx(a);
     return [port(a, right ? "right" : "left"), port(b, right ? "left" : "right")];
   }
 
@@ -365,8 +373,7 @@ export class Router {
 
   /** Leaf nodes overlapping the band between a and b, plus a and b: what a same-side C-shaped edge must go around. */
   private spanItems(a: Item, b: Item): Item[] {
-    const [x0, x1] = [Math.min(a.ax, b.ax), Math.max(a.ax + a.w, b.ax + b.w)];
-    const [y0, y1] = [Math.min(a.ay, b.ay), Math.max(a.ay + a.h, b.ay + b.h)];
+    const [x0, y0, x1, y1] = bbox([a, b]);
     const out = [a, b];
     for (const it of walk(this.doc.root))
       if (!isGroup(it) && it !== a && it !== b && it.ay < y1 && it.ay + it.h > y0 && it.ax < x1 && it.ax + it.w > x0) out.push(it);
@@ -375,7 +382,7 @@ export class Router {
 
   /** -> [points, axis]. axis: v | h (flow axis), L (explicit L port) or free. */
   geometry(e: Edge): Geo {
-    const [a, b] = [this.item(e.src), this.item(e.dst)];
+    const [a, b] = ends(this.doc, e);
     const owner = lca(a, b, this.doc.root);
     const [da, db] = [directChild(a, owner) as Item, directChild(b, owner) as Item];
     const d = flowDir(owner);
@@ -385,19 +392,19 @@ export class Router {
     let ex = e.attrs.exit;
     let en = e.attrs.enter;
     if (ex || en) {
-      ex ||= cxOf(b) > cxOf(a) ? "right" : "left";
-      en ||= cxOf(b) > cxOf(a) ? "left" : "right";
+      ex ||= cx(b) > cx(a) ? "right" : "left";
+      en ||= cx(b) > cx(a) ? "left" : "right";
       const [p0, p1] = [port(a, ex), port(b, en)];
       const [v0, v1] = [ex === "top" || ex === "bottom", en === "top" || en === "bottom"];
       if (v0 !== v1) return [[p0, v0 ? [p0[0], p1[1]] : [p1[0], p0[1]], p1], "L"];
       if (ex === en && !wps.length) {
         const gap = e.style.stub ? px(e.style.stub, 24) : 24;
-        const items = this.spanItems(a, b);
+        const [x0, y0, x1, y1] = bbox(this.spanItems(a, b));
         if (ex === "left" || ex === "right") {
-          const x = ex === "left" ? Math.min(...items.map((it) => it.ax)) - gap : Math.max(...items.map((it) => it.ax + it.w)) + gap;
+          const x = ex === "left" ? x0 - gap : x1 + gap;
           return [[p0, [x, p0[1]], [x, p1[1]], p1], "L"];
         }
-        const y = ex === "top" ? Math.min(...items.map((it) => it.ay)) - gap : Math.max(...items.map((it) => it.ay + it.h)) + gap;
+        const y = ex === "top" ? y0 - gap : y1 + gap;
         return [[p0, [p0[0], y], [p1[0], y], p1], "L"];
       }
       return [[p0, ...wps, p1], v0 ? "v" : "h"];
@@ -433,8 +440,8 @@ export class Router {
       }
       return [[p0, ...wps, p1], vert ? "v" : "h"];
     }
-    const t0 = wps[0] ?? [cxOf(b), cyOf(b)];
-    const t1 = last(wps) ?? [cxOf(a), cyOf(a)];
+    const t0 = wps[0] ?? [cx(b), cy(b)];
+    const t1 = last(wps) ?? [cx(a), cy(a)];
     const p0 = boundaryPoint(a, t0[0], t0[1], shapeOf(a));
     const p1 = boundaryPoint(b, t1[0], t1[1], shapeOf(b));
     return [[p0, ...wps, p1], Math.abs(p1[1] - p0[1]) >= Math.abs(p1[0] - p0[0]) ? "v" : "h"];
@@ -538,8 +545,9 @@ export function straighten(doc: Document, router: Router): boolean {
           changed = true;
         }
       }
-    const top = lca(doc.items.get(e.src) as Item, doc.items.get(e.dst) as Item, doc.root);
-    const tgt = directChild(doc.items.get(e.dst) as Item, top);
+    const [from, to] = ends(doc, e);
+    const top = lca(from, to, doc.root);
+    const tgt = directChild(to, top);
     const ri = tgt && top.layout?.rankIndex.get(tgt.id);
     if (Math.abs(ref) > 0.05 && ri !== undefined) {
       bump(top.rankShift, ri, -ref);

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="598" height="494" viewBox="0 0 598.24 493.71" class="predictygraph">
+<rect x="0" y="0" width="598.24" height="493.71" fill="#1e1e2e"/>
+<g class="pdg-groups">
+<g id="origins" class="pdg-group blue">
+<rect x="191.32" y="16" width="182" height="143.5" rx="10" fill="#363f5b" stroke="#89b4fa" stroke-width="1"/>
+<text x="205.32" y="41.4" text-anchor="start" fill="#a6adc8" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="12" font-weight="bold" font-style="normal">Origins</text>
+</g>
+<g id="research" class="pdg-group green">
+<rect x="349.84" y="334.21" width="232.4" height="143.5" rx="10" fill="#3c4947" stroke="#a6e3a1" stroke-width="1"/>
+<text x="363.84" y="359.61" text-anchor="start" fill="#a6adc8" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="12" font-weight="bold" font-style="normal">Research</text>
+</g>
+<g id="tools" class="pdg-group orange">
+<rect x="16" y="342.96" width="165.2" height="126" rx="10" fill="#4e3f42" stroke="#fab387" stroke-width="1"/>
+<text x="30" y="368.36" text-anchor="start" fill="#a6adc8" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="12" font-weight="bold" font-style="normal">Tools</text>
+</g>
+</g>
+<g class="pdg-edges">
+<g id="e0" class="pdg-edge">
+<path d="M 282.32 262.09 L 282.32 159.5" fill="none" stroke="#a6adc8" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="round" class="pdg-line"/>
+</g>
+<g id="e1" class="pdg-edge">
+<path d="M 315.06 318.79 L 349.84 338.88" fill="none" stroke="#a6adc8" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="round" class="pdg-line"/>
+</g>
+<g id="e2" class="pdg-edge">
+<path d="M 249.59 318.79 L 181.2 358.28" fill="none" stroke="#a6adc8" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="round" class="pdg-line"/>
+</g>
+</g>
+<g class="pdg-nodes">
+<g id="root" class="pdg-node purple">
+<ellipse cx="282.32" cy="299.89" rx="37.8" ry="37.8" fill="#443c5a" stroke="#cba6f7" stroke-width="1.5"/>
+<text x="282.32" y="304.44" text-anchor="middle" fill="#cdd6f4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">mindmap</text>
+</g>
+<g id="o1" class="pdg-node">
+<rect x="217.92" y="51" width="128.8" height="33.5" rx="10" fill="#313244" stroke="#585b70" stroke-width="1.5"/>
+<text x="282.32" y="72.3" text-anchor="middle" fill="#cdd6f4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Long history</text>
+</g>
+<g id="o2" class="pdg-node">
+<rect x="205.32" y="94.5" width="154" height="51" rx="10" fill="#313244" stroke="#585b70" stroke-width="1.5"/>
+<text x="282.32" y="115.8" text-anchor="middle" fill="#cdd6f4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Popularisation:</text>
+<text x="282.32" y="133.3" text-anchor="middle" fill="#cdd6f4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Tony Buzan</text>
+</g>
+<g id="r1" class="pdg-node">
+<rect x="384.84" y="369.21" width="162.4" height="51" rx="10" fill="#313244" stroke="#585b70" stroke-width="1.5"/>
+<text x="466.04" y="390.51" text-anchor="middle" fill="#cdd6f4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">On effectiveness</text>
+<text x="466.04" y="408.01" text-anchor="middle" fill="#cdd6f4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">and features</text>
+</g>
+<g id="r2" class="pdg-node">
+<rect x="363.84" y="430.21" width="204.4" height="33.5" rx="10" fill="#313244" stroke="#585b70" stroke-width="1.5"/>
+<text x="466.04" y="451.51" text-anchor="middle" fill="#cdd6f4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">On automatic creation</text>
+</g>
+<g id="t1" class="pdg-node">
+<rect x="30" y="377.96" width="137.2" height="33.5" rx="10" fill="#313244" stroke="#585b70" stroke-width="1.5"/>
+<text x="98.6" y="399.26" text-anchor="middle" fill="#cdd6f4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Pen and paper</text>
+</g>
+<g id="t2" class="pdg-node">
+<rect x="55.2" y="421.46" width="86.8" height="33.5" rx="10" fill="#313244" stroke="#585b70" stroke-width="1.5"/>
+<text x="98.6" y="442.76" text-anchor="middle" fill="#cdd6f4" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Mermaid</text>
+</g>
+</g>
+</svg>

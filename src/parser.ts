@@ -10,10 +10,11 @@ import {
   newNode,
   type Resolver,
 } from "./model.ts";
-import { MAX_EDGES } from "./safe.ts";
+import { last, MAX_EDGES } from "./safe.ts";
 
 const MAX_ANNOTATIONS = 64;
 const MAX_USE_DEPTH = 16;
+const MAX_DEPTH = 256;
 const W = String.raw`\p{L}\p{N}_`;
 const VAR_RE = new RegExp(String.raw`\$(?:\{([A-Za-z_][${W}]*)\}|([A-Za-z_][${W}]*))`, "gu");
 const LET_RE = new RegExp(String.raw`^let\s+([A-Za-z_][${W}]*)\s*=\s*(.+)$`, "u");
@@ -49,7 +50,6 @@ interface Def {
 }
 
 const q = JSON.stringify;
-const last = <T>(a: readonly T[]): T => a[a.length - 1] as T;
 const words = (s = ""): string[] => s.split(/\s+/).filter(Boolean);
 const isP = (t: Tok | undefined, v: string): boolean => t?.[0] === "punct" && t[1] === v;
 const escapeStr = (v: string): string => v.replaceAll("\\", "\\\\").replaceAll('"', '\\"');
@@ -266,13 +266,25 @@ class Parser {
 
   group(toks: Tok[], lineno: number): void {
     if (!isP(last(toks), "{")) throw new PdgSyntaxError("group needs '{'", lineno);
-    const g = this.declare(this.q((toks[1] as Tok)[1]), lineno, true);
     const { label, classes, attrs } = this.tail(toks.slice(0, -1), 2, lineno);
+    this.openGroup(this.q((toks[1] as Tok)[1]), label, classes, attrs, lineno, new Map());
+  }
+
+  private openGroup(
+    id: string,
+    label: string | undefined,
+    classes: string[],
+    attrs: Record<string, string>,
+    lineno: number,
+    vars: Map<string, string>,
+  ): void {
+    if (this.stack.length > MAX_DEPTH) throw new PdgSyntaxError(`groups nested too deep (limit ${MAX_DEPTH})`, lineno);
+    const g = this.declare(id, lineno, true);
     Object.assign(g, { classes, attrs });
     if (label !== undefined) g.label = label;
     this.applyDefaults(g, "group");
     this.stack.push(g);
-    this.vars.push(new Map());
+    this.vars.push(vars);
   }
 
   bracket(toks: Tok[], lineno: number): void {
@@ -361,14 +373,9 @@ class Parser {
       delete attrs[k];
     }
     for (const [k, v] of def.params) if (v === null && !args.has(k)) throw new PdgSyntaxError(`use ${name}: missing ${k}=`, lineno);
-    const g = this.declare(this.q(gid), lineno, true);
-    Object.assign(g, { classes, attrs });
-    if (label !== undefined) g.label = label;
-    this.applyDefaults(g, "group");
     const depth = this.stack.length;
-    this.stack.push(g);
     const defaults = [...def.params].filter((p): p is [string, string] => p[1] !== null);
-    this.vars.push(new Map([...defaults, ...args, ["ID", gid], ["LABEL", label ?? gid]]));
+    this.openGroup(this.q(gid), label, classes, attrs, lineno, new Map([...defaults, ...args, ["ID", gid], ["LABEL", label ?? gid]]));
     this.prefixes.push(gid);
     this.expanding.push(name);
     try {

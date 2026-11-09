@@ -1,4 +1,4 @@
-import { type Document, type Edge, type Group, type Item, isGroup, type Node, type Pt, walk } from "./model.ts";
+import { cx, type Document, type Edge, ends, type Group, type Item, isGroup, type Node, type Pt, walk } from "./model.ts";
 import { mean, or, pyRound } from "./safe.ts";
 import { box4, px } from "./style.ts";
 import { hasTitleBand, nodePadding, textBlock, titlePosition } from "./styleutil.ts";
@@ -70,13 +70,17 @@ export function directChild(item: Item, g: Group): Item | undefined {
 
 type Local = [Item, Item, Edge];
 
+/** The two children of g that edge e connects (when it crosses between distinct children). */
+const childEnds = (g: Group, doc: Document, e: Edge): [Item, Item] | undefined => {
+  const [a, b] = ends(doc, e).map((i) => directChild(i, g));
+  return a && b && a !== b ? [a, b] : undefined;
+};
+
 export function localEdges(g: Group, doc: Document): Local[] {
   const out: Local[] = [];
   for (const e of doc.edges) {
-    if (e.attrs.constraint === "false") continue;
-    const a = directChild(doc.items.get(e.src) as Item, g);
-    const b = directChild(doc.items.get(e.dst) as Item, g);
-    if (a && b && a !== b) out.push([a, b, e]);
+    const ab = e.attrs.constraint === "false" ? undefined : childEnds(g, doc, e);
+    if (ab) out.push([...ab, e]);
   }
   return out;
 }
@@ -90,10 +94,9 @@ function labelGaps(g: Group, doc: Document, horizontal: boolean): Map<number, nu
   const need = new Map<number, number>();
   for (const e of doc.edges) {
     if (!(horizontal ? e.label : e.attrs.step)) continue;
-    const a = directChild(doc.items.get(e.src) as Item, g);
-    const b = directChild(doc.items.get(e.dst) as Item, g);
-    if (!a || !b || a === b) continue;
-    const [i, j] = [index.get(a.id) as number, index.get(b.id) as number].sort((x, y) => x - y) as [number, number];
+    const ab = childEnds(g, doc, e);
+    if (!ab) continue;
+    const [i, j] = ab.map((k) => index.get(k.id) as number).sort((x, y) => x - y) as [number, number];
     if (j !== i + 1) continue;
     let step = 0;
     if (e.attrs.step) {
@@ -398,8 +401,9 @@ function layeredLayout(g: Group, doc: Document): Pt {
   const edges = local.map(([a, b, e]): [string, string, number] => [a.id, b.id, Number(e.attrs.weight ?? 1)]);
   const portoff = new Map<string, number>();
   for (const [a, b, e] of local) {
-    portoff.set(key(a.id, b.id), innerOff(doc.items.get(e.src) as Item, a, horizontal));
-    portoff.set(key(b.id, a.id), innerOff(doc.items.get(e.dst) as Item, b, horizontal));
+    const [s, d] = ends(doc, e);
+    portoff.set(key(a.id, b.id), innerOff(s, a, horizontal));
+    portoff.set(key(b.id, a.id), innerOff(d, b, horizontal));
   }
   const dag = breakCycles(kids, edges);
   const rank = assignRanks(kids, dag);
@@ -579,16 +583,13 @@ function alignX(doc: Document): void {
     if (!ref || ref === item || !p) continue;
     const pr = box4(p.style.padding, 14)[1];
     const [loEdge, hiEdge] = [p.ax + p.ox, p.ax + p.w - pr];
-    let dx = ref.ax + ref.w / 2 - (item.ax + item.w / 2);
-    if (dx > 0) {
-      const block = p.children.filter((s) => s === item || s.ax >= item.ax + item.w - 1e-6);
-      dx = Math.min(dx, hiEdge - Math.max(...block.map((s) => s.ax + s.w)));
-      if (Math.abs(dx) > 0.01) for (const s of block) shift(s, dx);
-    } else {
-      const block = p.children.filter((s) => s === item || s.ax + s.w <= item.ax + 1e-6);
-      dx = Math.max(dx, loEdge - Math.min(...block.map((s) => s.ax)));
-      if (Math.abs(dx) > 0.01) for (const s of block) shift(s, dx);
-    }
+    let dx = cx(ref) - cx(item);
+    const right = dx > 0;
+    const block = p.children.filter((s) => s === item || (right ? s.ax >= item.ax + item.w - 1e-6 : s.ax + s.w <= item.ax + 1e-6));
+    dx = right
+      ? Math.min(dx, hiEdge - Math.max(...block.map((s) => s.ax + s.w)))
+      : Math.max(dx, loEdge - Math.min(...block.map((s) => s.ax)));
+    if (Math.abs(dx) > 0.01) for (const s of block) shift(s, dx);
   }
 }
 
@@ -607,8 +608,7 @@ export function layout(doc: Document): void {
     const wps = g.layout?.waypoints;
     if (!wps?.size) continue;
     for (const e of doc.edges) {
-      const a = directChild(doc.items.get(e.src) as Item, g);
-      const b = directChild(doc.items.get(e.dst) as Item, g);
+      const [a, b] = ends(doc, e).map((i) => directChild(i, g));
       if (!a || !b) continue;
       for (const [k, rev] of [
         [key(a.id, b.id), false],

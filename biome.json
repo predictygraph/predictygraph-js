@@ -1,4 +1,4 @@
 {
   "formatter": { "indentStyle": "space", "lineWidth": 140 },
-  "files": { "includes": ["src/**", "test/**", "!test/examples", "!test/fixtures"] }
+  "files": { "includes": ["src/**", "test/**", "!test/examples", "!test/fixtures", "!test/snapshots"] }
 }

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="821" height="488" viewBox="0 0 821.35 488.25" class="predictygraph">
+<rect x="0" y="0" width="821.35" height="488.25" fill="#0e1418"/>
+<g class="pdg-grid">
+<path d="M 40 0 L 40 488.25 M 80 0 L 80 488.25 M 120 0 L 120 488.25 M 160 0 L 160 488.25 M 200 0 L 200 488.25 M 240 0 L 240 488.25 M 280 0 L 280 488.25 M 320 0 L 320 488.25 M 360 0 L 360 488.25 M 400 0 L 400 488.25 M 440 0 L 440 488.25 M 480 0 L 480 488.25 M 520 0 L 520 488.25 M 560 0 L 560 488.25 M 600 0 L 600 488.25 M 640 0 L 640 488.25 M 680 0 L 680 488.25 M 720 0 L 720 488.25 M 760 0 L 760 488.25 M 800 0 L 800 488.25 M 0 40 L 821.35 40 M 0 80 L 821.35 80 M 0 120 L 821.35 120 M 0 160 L 821.35 160 M 0 200 L 821.35 200 M 0 240 L 821.35 240 M 0 280 L 821.35 280 M 0 320 L 821.35 320 M 0 360 L 821.35 360 M 0 400 L 821.35 400 M 0 440 L 821.35 440 M 0 480 L 821.35 480" fill="none" stroke="#1a2630" stroke-width="1" stroke-opacity="0.35"/>
+</g>
+<g class="pdg-groups">
+<g id="fabric" class="pdg-group rail">
+<rect x="330.15" y="147.06" width="114.8" height="194.13" fill="#131c22" stroke="#2a3842" stroke-width="2"/>
+<text x="330.15" y="137.46" text-anchor="start" fill="#7d8b93" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="12" font-weight="bold" font-style="normal">Spine fabric</text>
+</g>
+<g id="svc" class="pdg-group list">
+<rect x="614.95" y="16" width="190.4" height="456.25" fill="none" stroke="none" stroke-width="1"/>
+</g>
+</g>
+<g class="pdg-edges">
+<g id="e0" class="pdg-edge primary pdg-flow pdg-flow-forward">
+<path d="M 136.4 233.63 L 209.84 233.63 Q 209.84 233.63 209.84 233.63 L 256.71 186.75 Q 256.71 186.75 256.71 186.75 L 334.79 186.75" fill="none" stroke="#4fd1a5" stroke-linejoin="round" stroke-width="1" stroke-opacity="0.3" class="pdg-line"/>
+<path d="M 144.4 233.63 L 209.84 233.63 Q 209.84 233.63 209.84 233.63 L 256.71 186.75 Q 256.71 186.75 256.71 186.75 L 326.79 186.75" fill="none" stroke="#4fd1a5" stroke-linejoin="round" stroke-width="8" stroke-dasharray="0.1 24" stroke-linecap="round" stroke-dashoffset="24.1" class="pdg-line pdg-flow-forward"><animate attributeName="stroke-dashoffset" values="24.1;0" dur="0.9s" repeatCount="indefinite"/></path>
+<path d="M 144.4 233.63 L 209.84 233.63 Q 209.84 233.63 209.84 233.63 L 256.71 186.75 Q 256.71 186.75 256.71 186.75 L 326.79 186.75" fill="none" stroke="#0e1418" stroke-linejoin="round" stroke-width="4" stroke-dasharray="0.1 24" stroke-linecap="round" stroke-dashoffset="24.1" class="pdg-line pdg-flow-ring"><animate attributeName="stroke-dashoffset" values="24.1;0" dur="0.9s" repeatCount="indefinite"/></path>
+<polygon points="344.15,186.75 333.75,191.12 333.75,182.38" fill="#4fd1a5" class="pdg-head"/>
+<rect x="269.65" y="178.88" width="52.2" height="15.75" rx="3" fill="#0e1418" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="295.75" y="190.32" text-anchor="middle" fill="#e8eef0" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">primary</text>
+</g>
+<g id="e1" class="pdg-edge backup pdg-flow pdg-flow-forward">
+<path d="M 136.4 233.63 L 199.34 233.63 Q 199.34 233.63 199.34 233.63 L 267.21 301.5 Q 267.21 301.5 267.21 301.5 L 334.79 301.5" fill="none" stroke="#6aa8ff" stroke-linejoin="round" stroke-width="1" stroke-opacity="0.3" class="pdg-line"/>
+<path d="M 144.4 233.63 L 199.34 233.63 Q 199.34 233.63 199.34 233.63 L 267.21 301.5 Q 267.21 301.5 267.21 301.5 L 326.79 301.5" fill="none" stroke="#6aa8ff" stroke-linejoin="round" stroke-width="8" stroke-dasharray="0.1 24" stroke-linecap="round" stroke-dashoffset="24.1" class="pdg-line pdg-flow-forward"><animate attributeName="stroke-dashoffset" values="24.1;0" dur="1.4s" repeatCount="indefinite"/></path>
+<path d="M 144.4 233.63 L 199.34 233.63 Q 199.34 233.63 199.34 233.63 L 267.21 301.5 Q 267.21 301.5 267.21 301.5 L 326.79 301.5" fill="none" stroke="#0e1418" stroke-linejoin="round" stroke-width="4" stroke-dasharray="0.1 24" stroke-linecap="round" stroke-dashoffset="24.1" class="pdg-line pdg-flow-ring"><animate attributeName="stroke-dashoffset" values="24.1;0" dur="1.4s" repeatCount="indefinite"/></path>
+<polygon points="344.15,301.5 333.75,305.87 333.75,297.13" fill="#6aa8ff" class="pdg-head"/>
+<rect x="278.2" y="293.63" width="45.6" height="15.75" rx="3" fill="#0e1418" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="301" y="305.07" text-anchor="middle" fill="#e8eef0" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">backup</text>
+</g>
+<g id="e2" class="pdg-edge primary pdg-flow pdg-flow-forward">
+<path d="M 387.55 212.44 L 387.55 266.45" fill="none" stroke="#4fd1a5" stroke-linejoin="round" stroke-width="1" stroke-opacity="0.3" class="pdg-line"/>
+<path d="M 387.55 220.44 L 387.55 258.45" fill="none" stroke="#4fd1a5" stroke-linejoin="round" stroke-width="8" stroke-dasharray="0.1 24" stroke-linecap="round" stroke-dashoffset="24.1" class="pdg-line pdg-flow-forward"><animate attributeName="stroke-dashoffset" values="24.1;0" dur="1.2s" repeatCount="indefinite"/></path>
+<path d="M 387.55 220.44 L 387.55 258.45" fill="none" stroke="#0e1418" stroke-linejoin="round" stroke-width="4" stroke-dasharray="0.1 24" stroke-linecap="round" stroke-dashoffset="24.1" class="pdg-line pdg-flow-ring"><animate attributeName="stroke-dashoffset" values="24.1;0" dur="1.2s" repeatCount="indefinite"/></path>
+<polygon points="387.55,275.81 383.18,265.41 391.92,265.41" fill="#4fd1a5" class="pdg-head"/>
+</g>
+<g id="e3" class="pdg-edge">
+<path d="M 430.95 167.06 L 465.35 167.06 Q 465.35 167.06 465.35 167.06 L 576.73 55.69 Q 576.73 55.69 576.73 55.69 L 619.59 55.69" fill="none" stroke="#26333c" stroke-linejoin="round" stroke-width="2" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="628.95,55.69 618.55,60.06 618.55,51.32" fill="#26333c" class="pdg-head"/>
+</g>
+<g id="e4" class="pdg-edge">
+<path d="M 430.95 206.44 L 619.59 206.44" fill="none" stroke="#26333c" stroke-linejoin="round" stroke-width="2" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="628.95,206.44 618.55,210.81 618.55,202.07" fill="#26333c" class="pdg-head"/>
+</g>
+<g id="e5" class="pdg-edge primary pdg-draw">
+<path d="M 430.95 186.75 L 465.35 186.75 Q 465.35 186.75 465.35 186.75 L 521.04 131.06 Q 521.04 131.06 521.04 131.06 L 619.59 131.06" fill="none" stroke="#4fd1a5" stroke-linejoin="round" stroke-width="2" stroke-linecap="butt" stroke-dasharray="213.7 213.7" stroke-dashoffset="0" class="pdg-line"><animate attributeName="stroke-dashoffset" values="0;0;-213.71;-427.41" dur="2.5s" repeatCount="indefinite"/></path>
+<polygon points="628.95,131.06 618.55,135.43 618.55,126.69" fill="#4fd1a5" class="pdg-head"/>
+</g>
+<g id="e6" class="pdg-edge">
+<path d="M 430.95 281.81 L 619.59 281.81" fill="none" stroke="#26333c" stroke-linejoin="round" stroke-width="2" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="628.95,281.81 618.55,286.18 618.55,277.44" fill="#26333c" class="pdg-head"/>
+</g>
+<g id="e7" class="pdg-edge">
+<path d="M 430.95 301.5 L 465.35 301.5 Q 465.35 301.5 465.35 301.5 L 521.04 357.19 Q 521.04 357.19 521.04 357.19 L 619.59 357.19" fill="none" stroke="#26333c" stroke-linejoin="round" stroke-width="2" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="628.95,357.19 618.55,361.56 618.55,352.82" fill="#26333c" class="pdg-head"/>
+</g>
+<g id="e8" class="pdg-edge">
+<path d="M 430.95 321.19 L 465.35 321.19 Q 465.35 321.19 465.35 321.19 L 576.73 432.56 Q 576.73 432.56 576.73 432.56 L 619.59 432.56" fill="none" stroke="#26333c" stroke-linejoin="round" stroke-width="2" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="628.95,432.56 618.55,436.93 618.55,428.19" fill="#26333c" class="pdg-head"/>
+</g>
+</g>
+<g class="pdg-nodes">
+<g id="dc" class="pdg-node">
+<rect x="16" y="207.94" width="120.4" height="51.38" fill="none" stroke="none" stroke-width="1.5"/>
+<text x="76.2" y="229.24" text-anchor="middle" fill="#e8eef0" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">Data center</text>
+<text x="76.2" y="247.74" text-anchor="middle" fill="#7d8b93" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="400" font-style="normal">GPU racks</text>
+</g>
+<g id="spa" class="pdg-node">
+<rect x="344.15" y="161.06" width="86.8" height="51.38" fill="none" stroke="none" stroke-width="1.5"/>
+<text x="387.55" y="182.36" text-anchor="middle" fill="#e8eef0" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">Spine A</text>
+<text x="387.55" y="200.87" text-anchor="middle" fill="#7d8b93" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">400G</text>
+</g>
+<g id="spb" class="pdg-node">
+<rect x="344.15" y="275.81" width="86.8" height="51.38" fill="none" stroke="none" stroke-width="1.5"/>
+<text x="387.55" y="297.11" text-anchor="middle" fill="#e8eef0" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">Spine B</text>
+<text x="387.55" y="315.62" text-anchor="middle" fill="#7d8b93" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">400G</text>
+</g>
+<g id="obj" class="pdg-node">
+<rect x="628.95" y="30" width="128.8" height="51.38" fill="none" stroke="none" stroke-width="1.5"/>
+<text x="642.95" y="51.3" text-anchor="start" fill="#e8eef0" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">Object store</text>
+<text x="642.95" y="69.81" text-anchor="start" fill="#7d8b93" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">S3 · 4 PB</text>
+</g>
+<g id="train" class="pdg-node">
+<rect x="628.95" y="105.38" width="162.4" height="51.38" fill="none" stroke="none" stroke-width="1.5"/>
+<text x="642.95" y="126.67" text-anchor="start" fill="#e8eef0" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">Training cluster</text>
+<text x="642.95" y="145.18" text-anchor="start" fill="#7d8b93" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">512 × H100</text>
+</g>
+<g id="infer" class="pdg-node">
+<rect x="628.95" y="180.75" width="103.6" height="51.38" fill="none" stroke="none" stroke-width="1.5"/>
+<text x="642.95" y="202.05" text-anchor="start" fill="#e8eef0" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">Inference</text>
+<text x="642.95" y="220.56" text-anchor="start" fill="#7d8b93" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">vLLM pool</text>
+</g>
+<g id="feat" class="pdg-node">
+<rect x="628.95" y="256.13" width="137.2" height="51.38" fill="none" stroke="none" stroke-width="1.5"/>
+<text x="642.95" y="277.43" text-anchor="start" fill="#e8eef0" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">Feature store</text>
+<text x="642.95" y="295.93" text-anchor="start" fill="#7d8b93" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">Redis</text>
+</g>
+<g id="log" class="pdg-node">
+<rect x="628.95" y="331.5" width="86.8" height="51.38" fill="none" stroke="none" stroke-width="1.5"/>
+<text x="642.95" y="352.8" text-anchor="start" fill="#e8eef0" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">Logging</text>
+<text x="642.95" y="371.31" text-anchor="start" fill="#7d8b93" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">Loki</text>
+</g>
+<g id="peer" class="pdg-node">
+<rect x="628.95" y="406.88" width="120.82" height="51.38" fill="none" stroke="none" stroke-width="1.5"/>
+<text x="642.95" y="428.18" text-anchor="start" fill="#e8eef0" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">Peering</text>
+<text x="642.95" y="446.68" text-anchor="start" fill="#7d8b93" font-family="&quot;IBM Plex Sans&quot;, &quot;Inter&quot;, Arial, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">IX · 2 × 100G</text>
+</g>
+</g>
+</svg>

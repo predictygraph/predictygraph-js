@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="558" height="461" viewBox="0 0 557.89 461.05" class="predictygraph">
+<rect x="0" y="0" width="557.89" height="461.05" fill="#ffffff"/>
+<g class="pdg-groups">
+<g id="edge" class="pdg-group tier">
+<rect x="16" y="16" width="413.29" height="83.38" rx="10" fill="#eff6ff" stroke="none" stroke-width="1"/>
+<text x="42.67" y="57.69" text-anchor="middle" transform="rotate(-90 42.67 57.69)" fill="#2563eb" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="bold" font-style="normal">Edge</text>
+</g>
+<g id="app" class="pdg-group tier">
+<rect x="16" y="133.13" width="413.29" height="105.8" rx="10" fill="#f0fdf4" stroke="none" stroke-width="1"/>
+<text x="42.67" y="186.03" text-anchor="middle" transform="rotate(-90 42.67 186.03)" fill="#16a34a" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="bold" font-style="normal">Application</text>
+</g>
+<g id="data" class="pdg-group tier">
+<rect x="16" y="272.68" width="413.29" height="95.38" rx="10" fill="#f8fafc" stroke="none" stroke-width="1"/>
+<text x="42.67" y="320.36" text-anchor="middle" transform="rotate(-90 42.67 320.36)" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="bold" font-style="normal">Data</text>
+</g>
+</g>
+<g class="pdg-edges">
+<g id="e0" class="pdg-edge">
+<path d="M 207.63 57.69 C 223.44 57.69 223.44 57.69 239.26 57.69" fill="none" stroke="#64748b" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="247.63,57.69 238.33,61.59 238.33,53.78" fill="#64748b" class="pdg-head"/>
+<circle cx="223.44" cy="43.81" r="9.88" fill="#16a34a" stroke="#ffffff" stroke-width="1.5" class="pdg-step"/>
+<text x="223.44" y="47.39" text-anchor="middle" fill="#ffffff" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">1</text>
+</g>
+<g id="e1" class="pdg-edge">
+<path d="M 331.46 85.38 C 331.46 112.06 131.37 112.06 131.37 138.75" fill="none" stroke="#64748b" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="131.37,147.13 127.46,137.82 135.28,137.82" fill="#64748b" class="pdg-head"/>
+<rect x="195.41" y="104.19" width="72" height="15.75" rx="3" fill="#ffffff" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="231.41" y="115.64" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">cache miss</text>
+<circle cx="182.54" cy="112.06" r="9.88" fill="#16a34a" stroke="#ffffff" stroke-width="1.5" class="pdg-step"/>
+<text x="182.54" y="115.64" text-anchor="middle" fill="#ffffff" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">2</text>
+</g>
+<g id="e2" class="pdg-edge">
+<path d="M 204.49 174.81 C 220.31 174.81 220.31 174.81 236.12 174.81" fill="none" stroke="#64748b" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="244.49,174.81 235.19,178.72 235.19,170.91" fill="#64748b" class="pdg-head"/>
+<circle cx="220.31" cy="160.94" r="9.88" fill="#16a34a" stroke="#ffffff" stroke-width="1.5" class="pdg-step"/>
+<text x="220.31" y="164.51" text-anchor="middle" fill="#ffffff" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">3</text>
+</g>
+<g id="e3" class="pdg-edge">
+<path d="M 328.32 202.5 C 328.32 240.4 328.32 240.4 328.32 278.31" fill="none" stroke="#64748b" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="328.32,286.68 324.41,277.38 332.23,277.38" fill="#64748b" class="pdg-head"/>
+<rect x="308.82" y="232.53" width="39" height="15.75" rx="3" fill="#ffffff" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="328.32" y="243.98" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">query</text>
+<circle cx="295.94" cy="240.4" r="9.88" fill="#16a34a" stroke="#ffffff" stroke-width="1.5" class="pdg-step"/>
+<text x="295.94" y="243.98" text-anchor="middle" fill="#ffffff" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">4</text>
+</g>
+</g>
+<g class="pdg-nodes">
+<g id="browser" class="pdg-node">
+<rect x="58.25" y="30" width="149.38" height="55.38" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="132.94" y="53.3" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">Browser</text>
+<text x="132.94" y="71.81" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">sends GET /orders</text>
+</g>
+<g id="cdn" class="pdg-node blue">
+<rect x="247.63" y="30" width="167.66" height="55.38" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<path d="M 247.63 40 A 10 10 0 0 1 251.63 32 L 251.63 83.38 A 10 10 0 0 1 247.63 75.38 Z" fill="#2563eb" class="pdg-accent"/>
+<text x="331.46" y="53.3" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">CDN</text>
+<text x="331.46" y="71.81" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">caches static files</text>
+</g>
+<g id="api" class="pdg-node green">
+<rect x="58.25" y="147.13" width="146.24" height="55.38" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<path d="M 58.25 157.13 A 10 10 0 0 1 62.25 149.13 L 62.25 200.5 A 10 10 0 0 1 58.25 192.5 Z" fill="#16a34a" class="pdg-accent"/>
+<text x="131.37" y="170.43" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">API gateway</text>
+<text x="131.37" y="188.93" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">checks the token</text>
+</g>
+<g id="orders" class="pdg-node green">
+<rect x="244.49" y="147.13" width="167.66" height="55.38" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<path d="M 244.49 157.13 A 10 10 0 0 1 248.49 149.13 L 248.49 200.5 A 10 10 0 0 1 244.49 192.5 Z" fill="#16a34a" class="pdg-accent"/>
+<text x="328.32" y="170.43" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">Orders service</text>
+<text x="328.32" y="188.93" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">builds the response</text>
+</g>
+<g id="db" class="pdg-node">
+<path d="M 272.32 292.68 A 56 6 0 0 1 384.32 292.68 L 384.32 348.05 A 56 6 0 0 1 272.32 348.05 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<path d="M 272.32 292.68 A 56 6 0 0 0 384.32 292.68" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="328.32" y="315.98" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">PostgreSQL</text>
+<text x="328.32" y="334.48" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">all orders</text>
+</g>
+</g>
+<g class="pdg-brackets">
+<g class="pdg-bracket">
+<path d="M 449.29 147.13 Q 457.29 147.13 457.29 155.13 L 457.29 242.59 Q 457.29 250.59 465.29 250.59 Q 457.29 250.59 457.29 258.59 L 457.29 346.05 Q 457.29 354.05 449.29 354.05" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" class="pdg-bracket-line"/>
+<text x="471.29" y="247.29" text-anchor="start" fill="#4b5563" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="italic">runs in our</text>
+<text x="471.29" y="261.04" text-anchor="start" fill="#4b5563" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="italic">cluster</text>
+</g>
+</g>
+<g class="pdg-legend">
+<rect x="14" y="384.05" width="263.6" height="34" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" class="pdg-legend-box"/>
+<text x="24" y="404.63" text-anchor="start" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">Key</text>
+<rect x="59.8" y="394.05" width="14" height="14" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.2" class="pdg-legend-swatch green"/>
+<text x="79.8" y="404.63" text-anchor="start" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">our services</text>
+<rect x="175" y="394.05" width="14" height="14" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2" class="pdg-legend-swatch blue"/>
+<text x="195" y="404.63" text-anchor="start" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">third party</text>
+</g>
+<g class="pdg-caption">
+<text x="278.94" y="443.45" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="12" font-weight="normal" font-style="italic">A request, from the browser to the database</text>
+</g>
+</svg>

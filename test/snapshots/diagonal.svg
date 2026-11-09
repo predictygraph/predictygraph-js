@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="890" height="203" viewBox="0 0 889.6 202.75" class="predictygraph">
+<g class="pdg-groups">
+<g id="auto" class="pdg-group">
+<rect x="16" y="16" width="259.2" height="170.75" rx="10" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+<text x="30" y="40.45" text-anchor="start" fill="#374151" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">bend (default: diagonal=40)</text>
+</g>
+<g id="never" class="pdg-group">
+<rect x="315.2" y="16" width="259.2" height="170.75" rx="10" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+<text x="329.2" y="40.45" text-anchor="start" fill="#374151" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">diagonal=none</text>
+</g>
+<g id="always" class="pdg-group">
+<rect x="614.4" y="16" width="259.2" height="170.75" rx="10" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+<text x="628.4" y="40.45" text-anchor="start" fill="#374151" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="bold" font-style="normal">diagonal=always</text>
+</g>
+</g>
+<g class="pdg-edges">
+<g id="e0" class="pdg-edge">
+<path d="M 88.8 83.25 L 88.8 99.25 Q 88.8 111.25 76.8 111.25 L 59.81 111.25 Q 50 111.25 50 121.06 L 50 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="50,139.25 46.09,129.95 53.91,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+<g id="e1" class="pdg-edge">
+<path d="M 106.8 83.25 L 106.8 99.25 Q 106.8 111.25 118.8 111.25 L 126.78 111.25 Q 136.6 111.25 136.6 121.06 L 136.6 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="136.6,139.25 132.69,129.95 140.51,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+<g id="e2" class="pdg-edge">
+<path d="M 184.4 83.25 L 184.4 99.25 Q 184.4 111.25 172.4 111.25 L 164.41 111.25 Q 154.6 111.25 154.6 121.06 L 154.6 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="154.6,139.25 150.69,129.95 158.51,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+<g id="e3" class="pdg-edge">
+<path d="M 202.4 83.25 L 202.4 99.25 Q 202.4 111.25 214.4 111.25 L 231.38 111.25 Q 241.2 111.25 241.2 121.06 L 241.2 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="241.2,139.25 237.29,129.95 245.11,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+<g id="e4" class="pdg-edge">
+<path d="M 388 83.25 L 388 99.25 Q 388 111.25 376 111.25 L 359.01 111.25 Q 349.2 111.25 349.2 121.06 L 349.2 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="349.2,139.25 345.29,129.95 353.11,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+<g id="e5" class="pdg-edge">
+<path d="M 406 83.25 L 406 99.25 Q 406 111.25 418 111.25 L 425.99 111.25 Q 435.8 111.25 435.8 121.06 L 435.8 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="435.8,139.25 431.89,129.95 439.71,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+<g id="e6" class="pdg-edge">
+<path d="M 483.6 83.25 L 483.6 99.25 Q 483.6 111.25 471.6 111.25 L 463.62 111.25 Q 453.8 111.25 453.8 121.06 L 453.8 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="453.8,139.25 449.89,129.95 457.71,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+<g id="e7" class="pdg-edge">
+<path d="M 501.6 83.25 L 501.6 99.25 Q 501.6 111.25 513.6 111.25 L 530.59 111.25 Q 540.4 111.25 540.4 121.06 L 540.4 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="540.4,139.25 536.49,129.95 544.31,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+<g id="e8" class="pdg-edge">
+<path d="M 687.2 83.25 L 687.2 92.25 Q 687.2 101.25 678.58 103.83 L 657.02 110.3 Q 648.4 112.88 648.4 121.88 L 648.4 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="648.4,139.25 644.49,129.95 652.31,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+<g id="e9" class="pdg-edge">
+<path d="M 705.2 83.25 L 705.2 92.25 Q 705.2 101.25 713.58 104.52 L 726.62 109.61 Q 735 112.88 735 121.88 L 735 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="735,139.25 731.09,129.95 738.91,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+<g id="e10" class="pdg-edge">
+<path d="M 782.8 83.25 L 782.8 92.25 Q 782.8 101.25 774.42 104.52 L 761.38 109.61 Q 753 112.88 753 121.88 L 753 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="753,139.25 749.09,129.95 756.91,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+<g id="e11" class="pdg-edge">
+<path d="M 800.8 83.25 L 800.8 92.25 Q 800.8 101.25 809.42 103.83 L 830.98 110.3 Q 839.6 112.88 839.6 121.88 L 839.6 130.88" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="839.6,139.25 835.69,129.95 843.51,129.95" fill="#4b5563" class="pdg-head"/>
+</g>
+</g>
+<g class="pdg-nodes">
+<g id="p1" class="pdg-node">
+<rect x="77.8" y="49.75" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="97.8" y="71.05" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">p</text>
+</g>
+<g id="q1" class="pdg-node">
+<rect x="173.4" y="49.75" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="193.4" y="71.05" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">q</text>
+</g>
+<g id="x1" class="pdg-node">
+<rect x="30" y="139.25" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="50" y="160.55" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">x</text>
+</g>
+<g id="y1" class="pdg-node">
+<rect x="98" y="139.25" width="95.2" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="145.6" y="160.55" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">shared y</text>
+</g>
+<g id="z1" class="pdg-node">
+<rect x="221.2" y="139.25" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="241.2" y="160.55" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">z</text>
+</g>
+<g id="p2" class="pdg-node">
+<rect x="377" y="49.75" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="397" y="71.05" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">p</text>
+</g>
+<g id="q2" class="pdg-node">
+<rect x="472.6" y="49.75" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="492.6" y="71.05" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">q</text>
+</g>
+<g id="x2" class="pdg-node">
+<rect x="329.2" y="139.25" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="349.2" y="160.55" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">x</text>
+</g>
+<g id="y2" class="pdg-node">
+<rect x="397.2" y="139.25" width="95.2" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="444.8" y="160.55" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">shared y</text>
+</g>
+<g id="z2" class="pdg-node">
+<rect x="520.4" y="139.25" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="540.4" y="160.55" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">z</text>
+</g>
+<g id="p3" class="pdg-node">
+<rect x="676.2" y="49.75" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="696.2" y="71.05" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">p</text>
+</g>
+<g id="q3" class="pdg-node">
+<rect x="771.8" y="49.75" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="791.8" y="71.05" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">q</text>
+</g>
+<g id="x3" class="pdg-node">
+<rect x="628.4" y="139.25" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="648.4" y="160.55" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">x</text>
+</g>
+<g id="y3" class="pdg-node">
+<rect x="696.4" y="139.25" width="95.2" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="744" y="160.55" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">shared y</text>
+</g>
+<g id="z3" class="pdg-node">
+<rect x="819.6" y="139.25" width="40" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="839.6" y="160.55" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">z</text>
+</g>
+</g>
+</svg>

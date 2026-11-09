@@ -40,6 +40,6 @@ export function cmpTuple(a: readonly Key[], b: readonly Key[]): number {
   return 0;
 }
 
-export const lastOf = <T>(a: readonly T[], i: number): T => a[i < 0 ? a.length + i : i] as T;
+export const last = <T>(a: readonly T[]): T => a[a.length - 1] as T;
 
 export const mean = (a: readonly number[]): number => a.reduce((s, x) => s + x, 0) / a.length;

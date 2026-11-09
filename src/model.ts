@@ -145,6 +145,16 @@ export const newGroup = (id: string, parent?: Group, kind: Group["kind"] = "grou
 export const isGroup = (i: Item): i is Group => "children" in i;
 export const cx = (b: Box): number => b.ax + b.w / 2;
 export const cy = (b: Box): number => b.ay + b.h / 2;
+export const centre = (b: Box): Pt => [cx(b), cy(b)];
+export const bbox = (bs: Box[]): [number, number, number, number] => [
+  Math.min(...bs.map((b) => b.ax)),
+  Math.min(...bs.map((b) => b.ay)),
+  Math.max(...bs.map((b) => b.ax + b.w)),
+  Math.max(...bs.map((b) => b.ay + b.h)),
+];
+export const half = (b: Box): Pt => [b.w / 2, b.h / 2];
+
+export const ends = (doc: Document, e: Edge): [Item, Item] => [doc.items.get(e.src) as Item, doc.items.get(e.dst) as Item];
 
 export function ancestors(i: Item): Group[] {
   const out: Group[] = [];

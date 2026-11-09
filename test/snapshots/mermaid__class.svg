@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="550" height="348" viewBox="0 0 550 347.5" class="predictygraph">
+<rect x="0" y="0" width="550" height="347.5" fill="#fdf6e3"/>
+<g class="pdg-groups">
+
+</g>
+<g class="pdg-edges">
+<g id="e0" class="pdg-edge accent">
+<path d="M 101.4 137 L 101.4 159 Q 101.4 165 107.4 165 L 285.8 165 Q 291.8 165 291.8 171 L 291.8 184.63" fill="none" stroke="#268bd2" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="291.8,193 287.89,183.7 295.71,183.7" fill="#268bd2" class="pdg-head"/>
+</g>
+<g id="e1" class="pdg-edge accent">
+<path d="M 291.8 128.25 L 291.8 184.63" fill="none" stroke="#268bd2" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="291.8,193 287.89,183.7 295.71,183.7" fill="#268bd2" class="pdg-head"/>
+</g>
+<g id="e2" class="pdg-edge accent">
+<path d="M 465.4 128.25 L 465.4 159 Q 465.4 165 459.4 165 L 297.8 165 Q 291.8 165 291.8 171 L 291.8 184.63" fill="none" stroke="#268bd2" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="291.8,193 287.89,183.7 295.71,183.7" fill="#268bd2" class="pdg-head"/>
+</g>
+</g>
+<g class="pdg-nodes">
+<g id="Animal" class="pdg-node">
+<rect x="219" y="193" width="145.6" height="138.5" rx="6" fill="#eee8d5" stroke="#93a1a1" stroke-width="1.5"/>
+<text x="233" y="214.3" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Animal</text>
+<text x="233" y="231.8" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">──────────</text>
+<text x="233" y="249.3" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">+int age</text>
+<text x="233" y="266.8" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">+String gender</text>
+<text x="233" y="284.3" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">──────────</text>
+<text x="233" y="301.8" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">+isMammal()</text>
+<text x="233" y="319.3" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">+mate()</text>
+</g>
+<g id="Duck" class="pdg-node">
+<rect x="16" y="16" width="170.8" height="121" rx="6" fill="#eee8d5" stroke="#93a1a1" stroke-width="1.5"/>
+<text x="30" y="37.3" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Duck</text>
+<text x="30" y="54.8" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">──────────</text>
+<text x="30" y="72.3" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">+String beakColor</text>
+<text x="30" y="89.8" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">──────────</text>
+<text x="30" y="107.3" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">+swim()</text>
+<text x="30" y="124.8" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">+quack()</text>
+</g>
+<g id="Fish" class="pdg-node">
+<rect x="214.8" y="24.75" width="154" height="103.5" rx="6" fill="#eee8d5" stroke="#93a1a1" stroke-width="1.5"/>
+<text x="228.8" y="46.05" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Fish</text>
+<text x="228.8" y="63.55" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">──────────</text>
+<text x="228.8" y="81.05" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">-int sizeInFeet</text>
+<text x="228.8" y="98.55" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">──────────</text>
+<text x="228.8" y="116.05" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">-canEat()</text>
+</g>
+<g id="Zebra" class="pdg-node">
+<rect x="396.8" y="24.75" width="137.2" height="103.5" rx="6" fill="#eee8d5" stroke="#93a1a1" stroke-width="1.5"/>
+<text x="410.8" y="46.05" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Zebra</text>
+<text x="410.8" y="63.55" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">──────────</text>
+<text x="410.8" y="81.05" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">+bool is_wild</text>
+<text x="410.8" y="98.55" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">──────────</text>
+<text x="410.8" y="116.05" text-anchor="start" fill="#073642" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">+run()</text>
+</g>
+</g>
+</svg>

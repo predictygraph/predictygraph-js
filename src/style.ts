@@ -1,5 +1,5 @@
 import { ancestors, type Document, type Edge, type Group, type Item, type Style, walk } from "./model.ts";
-import { MAX_VAR_LEN, number } from "./safe.ts";
+import { last, MAX_VAR_LEN, number } from "./safe.ts";
 import { BUILTIN_CSS } from "./themes.gen.ts";
 
 export const px = (v: string | undefined, def = 0): number => number(v, def);
@@ -60,8 +60,6 @@ function matches(parts: Part[], item: Subject, anc: Subject[]): boolean {
   }
   return true;
 }
-
-const last = <T>(a: T[]): T => a[a.length - 1] as T;
 
 /** Top-level `prelude { body }` blocks of a stylesheet, comments removed, nested braces kept in the body. */
 export function splitBlocks(css: string): Block[] {

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="823" height="515" viewBox="0 0 823.03 514.77" class="predictygraph">
+<rect x="0" y="0" width="823.03" height="514.77" fill="#ffffff"/>
+<g class="pdg-groups">
+<g id="user" class="pdg-group space">
+<rect x="16" y="16" width="510.43" height="138.88" rx="10" fill="#eff6ff" stroke="none" stroke-width="1"/>
+<text x="42.67" y="85.44" text-anchor="middle" transform="rotate(-90 42.67 85.44)" fill="#2563eb" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="bold" font-style="normal">User space</text>
+<g id="smi_col" class="pdg-group bare">
+<rect x="72.8" y="30" width="154" height="110.88" rx="10" fill="none" stroke="none" stroke-width="1"/>
+</g>
+<g id="cuda_col" class="pdg-group bare">
+<rect x="328.69" y="30" width="162.4" height="110.88" rx="10" fill="none" stroke="none" stroke-width="1"/>
+</g>
+</g>
+<g id="kernel" class="pdg-group green">
+<rect x="16" y="164.88" width="510.43" height="212.5" rx="10" fill="#f0fdf4" stroke="none" stroke-width="1"/>
+<text x="42.67" y="271.13" text-anchor="middle" transform="rotate(-90 42.67 271.13)" fill="#16a34a" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="bold" font-style="normal">Kernel space</text>
+<g id="compute" class="pdg-group compute">
+<rect x="72.25" y="178.88" width="440.18" height="95.13" rx="10" fill="none" stroke="#4ade80" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="324.23" y="260.7" text-anchor="start" fill="#16a34a" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">needed by compute workloads</text>
+</g>
+<g id="display" class="pdg-group bare">
+<rect x="75.11" y="308" width="434.46" height="55.38" rx="10" fill="none" stroke="none" stroke-width="1"/>
+</g>
+</g>
+<g id="hw" class="pdg-group space">
+<rect x="16" y="387.38" width="510.43" height="82.4" rx="10" fill="#eff6ff" stroke="none" stroke-width="1"/>
+<text x="42.67" y="428.57" text-anchor="middle" transform="rotate(-90 42.67 428.57)" fill="#2563eb" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="13" font-weight="bold" font-style="normal">Hardware</text>
+</g>
+</g>
+<g class="pdg-edges">
+<g id="e0" class="pdg-edge">
+<path d="M 149.8 67.5 C 149.8 72.31 149.8 72.31 149.8 77.13" fill="none" stroke="#4b83a8" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="149.8,85.5 145.89,76.2 153.71,76.2" fill="#4b83a8" class="pdg-head"/>
+</g>
+<g id="e1" class="pdg-edge">
+<path d="M 409.89 67.5 C 409.89 72.31 409.89 72.31 409.89 77.13" fill="none" stroke="#4b83a8" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="409.89,85.5 405.98,76.2 413.8,76.2" fill="#4b83a8" class="pdg-head"/>
+</g>
+<g id="e2" class="pdg-edge">
+<path d="M 149.8 140.88 C 149.8 160.69 149.8 160.69 149.8 180.5" fill="none" stroke="#4b83a8" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="149.8,188.88 145.89,179.57 153.71,179.57" fill="#4b83a8" class="pdg-head"/>
+</g>
+<g id="e3" class="pdg-edge">
+<path d="M 409.89 140.88 C 409.89 160.69 409.89 160.69 409.89 180.5" fill="none" stroke="#4b83a8" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="409.89,188.88 405.98,179.57 413.8,179.57" fill="#4b83a8" class="pdg-head"/>
+<rect x="337.59" y="152.81" width="144.6" height="15.75" rx="3" fill="#ffffff" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="409.89" y="164.26" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">ioctl on /dev/nvidia*</text>
+</g>
+<g id="e4" class="pdg-edge">
+<path d="M 317.35 216.56 C 271.54 216.56 271.54 216.56 225.72 216.56" fill="none" stroke="#4b83a8" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="217.35,216.56 226.65,212.66 226.65,220.47" fill="#4b83a8" class="pdg-head"/>
+<rect x="235.54" y="208.69" width="72" height="15.75" rx="3" fill="#ffffff" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="271.54" y="220.14" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">depends on</text>
+</g>
+<g id="e5" class="pdg-edge">
+<path d="M 155.16 308 C 155.16 280.31 155.16 280.31 155.16 252.62" fill="none" stroke="#4b83a8" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="155.16,244.25 159.06,253.55 151.25,253.55" fill="#4b83a8" class="pdg-head"/>
+<rect x="119.16" y="272.44" width="72" height="15.75" rx="3" fill="#ffffff" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="155.16" y="283.88" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">depends on</text>
+</g>
+<g id="e6" class="pdg-edge">
+<path d="M 345.91 335.69 C 300.09 335.69 300.09 335.69 254.28 335.69" fill="none" stroke="#4b83a8" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="245.91,335.69 255.21,331.78 255.21,339.59" fill="#4b83a8" class="pdg-head"/>
+<rect x="264.09" y="327.81" width="72" height="15.75" rx="3" fill="#ffffff" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="300.09" y="339.26" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">depends on</text>
+</g>
+<g id="e7" class="pdg-edge">
+<path d="M 82.25 216.56 L 70.25 216.56 Q 62.25 216.56 62.25 224.56 L 62.25 419.31 Q 62.25 420.13 63.06 420.13 L 63.88 420.13" fill="none" stroke="#4b83a8" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="72.25,420.13 62.95,424.03 62.95,416.22" fill="#4b83a8" class="pdg-head"/>
+</g>
+</g>
+<g class="pdg-nodes">
+<g id="smi" class="pdg-node plain">
+<rect x="93.8" y="30" width="112" height="37.5" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="149.8" y="53.3" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">nvidia-smi</text>
+</g>
+<g id="nvml" class="pdg-node blue">
+<rect x="72.8" y="85.5" width="154" height="55.38" rx="10" fill="#ffffff" stroke="#38bdf8" stroke-width="1.5"/>
+<text x="149.8" y="108.8" text-anchor="middle" fill="#2563eb" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">libnvidia-ml.so</text>
+<text x="149.8" y="127.31" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">NVML</text>
+</g>
+<g id="app" class="pdg-node plain">
+<rect x="328.69" y="30" width="162.4" height="37.5" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="409.89" y="53.3" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">CUDA application</text>
+</g>
+<g id="libcuda" class="pdg-node blue">
+<rect x="342.34" y="85.5" width="135.1" height="55.38" rx="10" fill="#ffffff" stroke="#38bdf8" stroke-width="1.5"/>
+<text x="409.89" y="108.8" text-anchor="middle" fill="#2563eb" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">libcuda.so</text>
+<text x="409.89" y="127.31" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">CUDA driver API</text>
+</g>
+<g id="nvidia" class="pdg-node green">
+<rect x="82.25" y="188.88" width="135.1" height="55.38" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<text x="149.8" y="212.18" text-anchor="middle" fill="#16a34a" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">nvidia</text>
+<text x="149.8" y="230.68" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">core GPU driver</text>
+</g>
+<g id="uvm" class="pdg-node green">
+<rect x="317.35" y="188.88" width="185.08" height="55.38" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<text x="409.89" y="212.18" text-anchor="middle" fill="#16a34a" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">nvidia_uvm</text>
+<text x="409.89" y="230.68" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">unified virtual memory</text>
+</g>
+<g id="modeset" class="pdg-node plain">
+<rect x="75.11" y="308" width="170.8" height="55.38" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="160.51" y="331.3" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">nvidia_modeset</text>
+<text x="160.51" y="349.81" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">display mode setting</text>
+</g>
+<g id="drm" class="pdg-node plain">
+<rect x="345.91" y="308" width="163.66" height="55.38" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="427.74" y="331.3" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">nvidia_drm</text>
+<text x="427.74" y="349.81" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">Linux DRM interface</text>
+</g>
+<g id="gpu" class="pdg-node plain">
+<rect x="72.25" y="401.38" width="112" height="37.5" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="128.25" y="424.68" text-anchor="middle" fill="#1e293b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="14" font-weight="600" font-style="normal">NVIDIA GPU</text>
+</g>
+</g>
+<g class="pdg-brackets">
+<g class="pdg-bracket">
+<path d="M 546.43 188.88 Q 554.43 188.88 554.43 196.88 L 554.43 268.13 Q 554.43 276.13 562.43 276.13 Q 554.43 276.13 554.43 284.13 L 554.43 355.38 Q 554.43 363.38 546.43 363.38" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" class="pdg-bracket-line"/>
+<text x="568.43" y="272.82" text-anchor="start" fill="#4b5563" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="italic">lsmod checks</text>
+<text x="568.43" y="286.57" text-anchor="start" fill="#4b5563" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="italic">only this layer</text>
+</g>
+<g class="pdg-bracket">
+<path d="M 681.43 30 Q 689.43 30 689.43 38 L 689.43 226.44 Q 689.43 234.44 697.43 234.44 Q 689.43 234.44 689.43 242.44 L 689.43 430.88 Q 689.43 438.88 681.43 438.88" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" class="pdg-bracket-line"/>
+<text x="703.43" y="231.14" text-anchor="start" fill="#4b5563" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="italic">nvidia-smi needs</text>
+<text x="703.43" y="244.89" text-anchor="start" fill="#4b5563" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="11" font-weight="normal" font-style="italic">the whole path</text>
+</g>
+</g>
+<g class="pdg-caption">
+<text x="411.51" y="497.17" text-anchor="middle" fill="#64748b" font-family="&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, Arial, Helvetica, &quot;Liberation Sans&quot;, sans-serif" font-size="12" font-weight="normal" font-style="italic">NVIDIA driver modules and the path from user space to the GPU</text>
+</g>
+</svg>
