@@ -1,7 +1,8 @@
 PDG_SRC ?= ../predictygraph
 PY = uv run --with $(PDG_SRC) python
+V ?= patch
 
-.PHONY: build test check themes fixtures
+.PHONY: build test check themes fixtures release
 
 build:
 	npx tsdown
@@ -17,3 +18,7 @@ themes:
 
 fixtures:
 	$(PY) scripts/dump_layout.py
+
+release: check test
+	npm version $(V) -m "chore: release %s"
+	git push --follow-tags

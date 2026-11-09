@@ -1,7 +1,27 @@
 {
   "name": "predictygraph-js",
   "version": "0.0.0",
-  "description": "Render predictygraph (.pdg) diagrams to SVG in the browser",
+  "description": "Render predictygraph (.pdg) diagrams to SVG in the browser, mermaid-style, with no runtime dependencies",
+  "keywords": [
+    "predictygraph",
+    "pdg",
+    "diagram",
+    "diagrams-as-code",
+    "flowchart",
+    "architecture-diagram",
+    "graph",
+    "svg",
+    "mermaid-alternative",
+    "text-to-diagram",
+    "browser"
+  ],
+  "homepage": "https://github.com/predictygraph/predictygraph-js#readme",
+  "bugs": "https://github.com/predictygraph/predictygraph-js/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/predictygraph/predictygraph-js.git"
+  },
+  "author": "Reza Jelveh <fishmangit@dynamia.ai>",
   "license": "Apache-2.0",
   "type": "module",
   "exports": {
@@ -10,15 +30,20 @@
       "default": "./dist/index.mjs"
     }
   },
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "unpkg": "./dist/index.iife.js",
-  "files": [
-    "dist"
-  ],
+  "jsdelivr": "./dist/index.iife.js",
+  "files": ["dist"],
   "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "tsdown",
     "test": "node --test test/*.test.ts",
-    "check": "biome check . && tsc --noEmit"
+    "check": "biome check . && tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.6",
