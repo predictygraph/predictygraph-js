@@ -3,6 +3,8 @@
 [![npm](https://img.shields.io/npm/v/predictygraph)](https://www.npmjs.com/package/predictygraph)
 [![ci](https://github.com/predictygraph/predictygraph-js/actions/workflows/ci.yml/badge.svg)](https://github.com/predictygraph/predictygraph-js/actions/workflows/ci.yml)
 
+![A developer adds one box and the diagram turns to spaghetti. A buff guy bursts through the wall with diagram.pdg, and the diagram comes out the same way every time.](https://predictygraph.github.io/assets/brand/comic-strip.webp)
+
 Render [predictygraph](https://github.com/predictygraph/predictygraph) (`.pdg`) diagrams to SVG in the browser. A TypeScript port of the Python renderer with the same layout, routing and themes, and no runtime dependencies (27 kB gzipped).
 
 Docs: [predictygraph.github.io](https://predictygraph.github.io/reference/javascript/). Diagram language: [spec](https://predictygraph.github.io/reference/spec/).
