@@ -23,6 +23,6 @@ jobs:
       - run: npm run check
       - run: npm test
       - run: npm publish --access public
-      - run: gh release create "$GITHUB_REF_NAME" --generate-notes --verify-tag dist/index.iife.js
+      - run: gh release upload "$GITHUB_REF_NAME" dist/index.iife.js --clobber || gh release create "$GITHUB_REF_NAME" --generate-notes --verify-tag dist/index.iife.js
         env:
           GH_TOKEN: ${{ github.token }}
