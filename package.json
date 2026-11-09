@@ -1,6 +1,6 @@
 {
   "name": "predictygraph-js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Render predictygraph (.pdg) diagrams to SVG in the browser, mermaid-style, with no runtime dependencies",
   "keywords": [
     "predictygraph",
@@ -34,7 +34,9 @@
   "types": "./dist/index.d.mts",
   "unpkg": "./dist/index.iife.js",
   "jsdelivr": "./dist/index.iife.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "engines": {
     "node": ">=22"
