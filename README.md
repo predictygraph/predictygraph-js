@@ -1,6 +1,6 @@
 # predictygraph-js
 
-[![npm](https://img.shields.io/npm/v/predictygraph-js)](https://www.npmjs.com/package/predictygraph-js)
+[![npm](https://img.shields.io/npm/v/predictygraph)](https://www.npmjs.com/package/predictygraph)
 [![ci](https://github.com/predictygraph/predictygraph-js/actions/workflows/ci.yml/badge.svg)](https://github.com/predictygraph/predictygraph-js/actions/workflows/ci.yml)
 
 Render [predictygraph](https://github.com/predictygraph/predictygraph) (`.pdg`) diagrams to SVG in the browser. A TypeScript port of the Python renderer with the same layout, routing and themes, and no runtime dependencies (27 kB gzipped).
@@ -10,7 +10,7 @@ Docs: [predictygraph.github.io](https://predictygraph.github.io/reference/javasc
 ## Script tag
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/predictygraph-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/predictygraph"></script>
 
 <pre class="pdg">
 graph dir=LR
@@ -23,11 +23,11 @@ On page load every `pre.pdg`, `div.pdg` and `code.language-pdg` element is repla
 ## ES module
 
 ```sh
-npm install predictygraph-js
+npm install predictygraph
 ```
 
 ```js
-import { render } from "predictygraph-js";
+import { render } from "predictygraph";
 
 element.innerHTML = render(source, { theme: "hami" });
 ```
