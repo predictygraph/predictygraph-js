@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>predictygraph-js demo</title>
+  <script src="../dist/index.iife.js"></script>
+</head>
+<body>
+  <pre class="pdg">
+graph dir=LR
+pod "Pod" -> sched "Scheduler" -> node "Node"
+  </pre>
+
+  <pre class="pdg">
+graph dir=TB theme=hami
+group k8s "Kubernetes" {
+  pod "Pod"; sched "HAMi scheduler"; dp "Device plugin"
+}
+gpu "GPU"
+pod -> sched -> dp -> gpu
+  </pre>
+</body>
+</html>

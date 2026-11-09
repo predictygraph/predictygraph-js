@@ -1,0 +1,29 @@
+{
+  "name": "predictygraph-js",
+  "version": "0.0.0",
+  "description": "Render predictygraph (.pdg) diagrams to SVG in the browser",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "unpkg": "./dist/index.iife.js",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsdown",
+    "test": "node --test test/*.test.ts",
+    "check": "biome check . && tsc --noEmit"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.6",
+    "@types/node": "24.19.2",
+    "tsdown": "0.23.7",
+    "typescript": "7.0.2"
+  }
+}

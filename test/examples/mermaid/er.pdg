@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 Reza Jelveh
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Mermaid "erDiagram" docs example (customer / order / line-item)
+graph theme=dracula dir=LR route=ortho arrow=both head=many head-start=one
+
+CUSTOMER "CUSTOMER\nname\ncustNumber\nsector"
+ORDER "ORDER\norderNumber\ndeliveryAddress"
+LINE_ITEM "LINE-ITEM\nproductCode\nquantity\npricePerUnit"
+DELIVERY_ADDRESS "DELIVERY-ADDRESS"
+
+CUSTOMER -- ORDER "places" head=zero-many
+ORDER -- LINE_ITEM "contains" head=one-many
+CUSTOMER .. DELIVERY_ADDRESS "uses" head=one-many
