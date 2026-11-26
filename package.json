@@ -1,6 +1,6 @@
 {
   "name": "predictygraph",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "Render predictygraph (.pdg) diagrams to SVG in the browser, mermaid-style, with no runtime dependencies",
   "keywords": [
     "predictygraph",
