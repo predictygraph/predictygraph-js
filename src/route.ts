@@ -175,6 +175,7 @@ const byNum = (a: number, b: number): number => a - b;
 
 export class Router {
   offset: Map<string, number> = new Map();
+  fanned: Set<string> = new Set();
   portShift: Map<string, number> = new Map();
   bendLevel: Map<string, number> = new Map();
   channel: Map<string, Pt> = new Map();
@@ -187,11 +188,35 @@ export class Router {
   }
 
   route(): this {
+    this.fanBuses();
     this.parallelOffsets();
     this.spreadPorts();
     this.sharedBends();
     this.separateChannels();
     return this;
+  }
+
+  /** Ortho edges sharing a source (or target): when the box overlap lets some of them
+   * run straight while others bend, the bent ones jog across the straight ones. Such a
+   * fan gives up the straight shortcut, so all of it merges into one bus instead. */
+  fanBuses(): void {
+    const fans = new Map<string, Edge[]>();
+    for (const e of this.doc.edges) {
+      if (routeOf(e) !== "ortho" || spread(e) || e.waypoints.length) continue;
+      for (const k of [`s\u0000${e.src}`, `d\u0000${e.dst}`]) fans.set(k, [...(fans.get(k) ?? []), e]);
+    }
+    for (const es of fans.values()) {
+      if (es.length < 2) continue;
+      const geo = es.map((e) => this.geometry(e));
+      const axes = new Set(geo.map(([, a]) => a));
+      const [axis] = axes;
+      if (axes.size !== 1 || (axis !== "v" && axis !== "h")) continue;
+      const i = axis === "v" ? 0 : 1; // cross-axis coordinate
+      const ends = geo.map(([p]): [number, number, number] => [(p[0] as Pt)[i], (p[p.length - 1] as Pt)[i], p.length]);
+      const straight = ends.filter(([a, b, n]) => n === 2 && Math.abs(a - b) < 0.5).map(([a]) => a);
+      const bent = ends.filter(([a, b]) => Math.abs(a - b) >= 0.5).map(([a, b]) => [Math.min(a, b), Math.max(a, b)] as const);
+      if (straight.some((c) => bent.some(([lo, hi]) => lo + 0.5 < c && c < hi - 0.5))) for (const e of es) this.fanned.add(e.id);
+    }
   }
 
   level(e: Edge): number | undefined {
@@ -438,7 +463,7 @@ export class Router {
         p1 = onOutline(b, shiftBy(p1, off), vert);
       }
       const boxy = [a, b].every((x) => RECT_SHAPES.includes(shapeOf(x)) || isGroup(x));
-      if (!wps.length && !off && boxy) {
+      if (!wps.length && !off && boxy && !this.fanned.has(e.id)) {
         const i = vert ? 0 : 1;
         const [alo, ahi] = vert ? [a.ax, a.ax + a.w] : [a.ay, a.ay + a.h];
         const [blo, bhi] = vert ? [b.ax, b.ax + b.w] : [b.ay, b.ay + b.h];

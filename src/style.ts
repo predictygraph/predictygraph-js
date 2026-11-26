@@ -217,7 +217,10 @@ export function applyStyles(doc: Document): void {
   for (const css of [BUILTIN_CSS, ...doc.stylesheets]) sheet.add(css);
   const root = doc.root;
   numberSteps(doc);
-  root.style = sheet.resolveVars(sheet.compute(root, []));
+  // box attributes on the graph line (padding=0, fill=...) win over CSS, like on any item
+  const rootSt: Style = sheet.compute(root, []);
+  for (const k of BOX_KEYS) if (k in root.attrs) rootSt[k] = root.attrs[k] as string;
+  root.style = sheet.resolveVars(rootSt);
   root.partStyles = Object.fromEntries(["caption", "legend"].map((k) => [k, partStyle(sheet, k, root, [], root.style)]));
   const rootFont = root.style["font-family"] ?? "sans-serif";
   for (const b of doc.brackets) b.style = sheet.resolveVars({ "font-family": rootFont, ...sheet.compute(b, [root]) });

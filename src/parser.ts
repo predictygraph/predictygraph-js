@@ -26,7 +26,7 @@ const PATTERNS = [
   String.raw`[ \t]+`,
   STR,
   "<?[-=.]{1,64}>|<[-=.]{1,64}|[-=.]{2,64}",
-  String.raw`[A-Za-z_][${W}-]*=(?:${STR}|[^\s{}]+)`,
+  String.raw`[A-Za-z_][${W}-]*=(?:${STR}|[^\s{};]+)`,
   String.raw`\.[A-Za-z_][${W}-]*`,
   `[A-Za-z_][${W}-]*`,
   "[{},;]",

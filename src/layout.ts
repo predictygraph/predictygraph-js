@@ -56,8 +56,9 @@ export function sizeNode(n: Node, doc: Document): void {
   n.attrs.shape = shape;
   const bare = SQUARISH.includes(shape) && !n.textLines.length;
   const [minW, minH] = bare ? [0, 0] : [px(st["min-width"]), px(st["min-height"])];
-  n.w = Math.max(n.w, minW, px(n.attrs.width));
-  n.h = Math.max(n.h, minH, px(n.attrs.height));
+  // width=/height= on the line, or CSS width/height: a minimum size like min-width
+  n.w = Math.max(n.w, minW, px(n.attrs.width ?? st.width));
+  n.h = Math.max(n.h, minH, px(n.attrs.height ?? st.height));
   if (SQUARISH.includes(shape)) n.w = n.h = Math.max(n.w, n.h);
 }
 
@@ -109,6 +110,37 @@ function labelGaps(g: Group, doc: Document, horizontal: boolean): Map<number, nu
   return need;
 }
 
+/** `justify=fill` on a row/column: hand `extra` space along its main axis to the
+ * children, smallest first, so they end up as equal as the space allows (later ones
+ * shift). `horizontal` says which way g grew; a row fills width, a column height.
+ * Returns false when g doesn't fill. */
+function fillLine(g: Group, extra: number, horizontal = true): boolean {
+  if (extra <= 0.01 || opt(g, "justify", "start") !== "fill" || !g.children.length) return false;
+  if (opt(g, "layout", "row") !== (horizontal ? "row" : "column")) return false;
+  const sizes = g.children.map((k) => (horizontal ? k.w : k.h));
+  // water level: the smallest n children are raised to one size, the rest keep theirs
+  const asc = [...sizes].sort((a, b) => a - b);
+  let level = 0;
+  for (let n = 1; n <= asc.length; n++) {
+    level = (asc.slice(0, n).reduce((a, b) => a + b, 0) + extra) / n;
+    if (n === asc.length || level <= (asc[n] as number)) break;
+  }
+  let shift = 0;
+  g.children.forEach((k, i) => {
+    const grow = Math.max(level - (sizes[i] as number), 0);
+    if (horizontal) {
+      k.x += shift;
+      k.w += grow;
+    } else {
+      k.y += shift;
+      k.h += grow;
+    }
+    shift += grow;
+    if (isGroup(k)) fillLine(k, grow, horizontal);
+  });
+  return true;
+}
+
 function lineLayout(g: Group, doc: Document): Pt {
   const horizontal = opt(g, "layout", "row") === "row";
   const gap = px(opt(g, "gap", "24"));
@@ -119,11 +151,14 @@ function lineLayout(g: Group, doc: Document): Pt {
   let lastStep = 0;
   g.children.forEach((k, idx) => {
     if (align === "stretch") {
-      if (horizontal) k.h = cross;
-      else {
+      if (horizontal) {
+        const grow = cross - k.h;
+        k.h = cross;
+        if (isGroup(k)) fillLine(k, grow, false);
+      } else {
         const grow = cross - k.w;
         k.w = cross;
-        if (isGroup(k) && opt(k, "justify", "start") === "center") k.ox += grow / 2;
+        if (isGroup(k) && !fillLine(k, grow) && opt(k, "justify", "start") === "center") k.ox += grow / 2;
       }
     }
     const off = centered(align, cross - (horizontal ? k.h : k.w));
@@ -555,6 +590,15 @@ export function layoutGroup(g: Group, doc: Document): void {
   g.oy = pt + (top ? g.labelH : 0);
   g.w = innerW + pl + pr + g.sideW;
   g.h = ch + pt + pb + g.labelH;
+  // width=/height= (or CSS width/min-width) set a minimum box size; content stays centred
+  const mw = Math.max(px(g.attrs.width), px(g.style.width), px(g.style["min-width"]));
+  const mh = Math.max(px(g.attrs.height), px(g.style.height), px(g.style["min-height"]));
+  if (mw > g.w) {
+    const grow = mw - g.w;
+    g.w = mw;
+    if (!fillLine(g, grow)) g.ox += grow / 2;
+  }
+  g.h = Math.max(g.h, mh);
 }
 
 function absolutize(g: Group, ox: number, oy: number): void {
