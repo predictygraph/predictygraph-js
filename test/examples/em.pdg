@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 Reza Jelveh
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Font sizes relative to the graph: nodes take its size, em/% scale from it.
+graph
+css {
+  graph { font-size: 20px; }
+  group { font-size: 0.5em; }
+  node.big { font-size: 1.5em; }
+  edge { font-size: 75%; }
+}
+group g "G" { a "plain"; b "big" .big }
+a -> b "label"

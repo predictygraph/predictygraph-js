@@ -198,11 +198,16 @@ function partStyle(sheet: StyleSheet, kind: string, owner: Subject, anc: Subject
   const base: Style = {};
   for (const k of TEXT_KEYS) if (k in inherit && !(kind === "sub" && k === "font-weight")) base[k] = inherit[k] as string;
   const st = sheet.resolveVars({ ...base, ...sheet.compute({ kind, classes: [...owner.classes] }, [owner, ...anc]) });
-  const fs = (st["font-size"] ?? "").trim();
-  const rel = px(inherit["font-size"], 14);
-  if (fs.endsWith("em")) st["font-size"] = `${(rel * number(fs.slice(0, -2), 1, 0.1, 10)).toFixed(2)}px`;
-  else if (fs.endsWith("%")) st["font-size"] = `${((rel * number(fs.slice(0, -1), 100, 10, 1000)) / 100).toFixed(2)}px`;
+  if (st["font-size"] !== undefined) st["font-size"] = relSize(st["font-size"], px(inherit["font-size"], 14));
   return st;
+}
+
+/** `em`/`%` font size -> px against `base`; any other value unchanged. */
+function relSize(value: string, base: number): string {
+  const fs = value.trim();
+  if (fs.endsWith("em")) return `${(base * number(fs.slice(0, -2), 1, 0.1, 10)).toFixed(2)}px`;
+  if (fs.endsWith("%")) return `${((base * number(fs.slice(0, -1), 100, 10, 1000)) / 100).toFixed(2)}px`;
+  return fs;
 }
 
 /** `graph steps=auto`: number every edge without its own `step=` in file order. */
@@ -226,19 +231,25 @@ export function applyStyles(doc: Document): void {
   root.partStyles = Object.fromEntries(["caption", "legend"].map((k) => [k, partStyle(sheet, k, root, [], root.style)]));
   const rootFont = root.style["font-family"] ?? "sans-serif";
   for (const b of doc.brackets) b.style = sheet.resolveVars({ "font-family": rootFont, ...sheet.compute(b, [root]) });
+  // diagram font sizes: a node without one takes the graph's; `em`/`%` on nodes, groups
+  // and edges are relative to the graph's size (like CSS rem: a group's own size is its
+  // title size, so nesting would shrink everything inside a group)
+  const base = px(relSize(root.style["font-size"] ?? "14px", 14), 14);
   for (const item of [...walk(root), ...doc.legend] as Item[]) {
     const anc = ancestors(item);
     const parent = item.parent?.style ?? root.style;
     const st: Style = parent["font-family"] ? { "font-family": parent["font-family"] } : {};
+    if (item.kind === "node") st["font-size"] = `${base}px`;
     Object.assign(st, sheet.compute(item, anc));
     Object.assign(st, boxAttrs(item));
     item.style = sheet.resolveVars(st);
+    if (item.style["font-size"] !== undefined) item.style["font-size"] = relSize(item.style["font-size"], base);
     if ("sub" in item.attrs) item.subStyle = partStyle(sheet, "sub", item, anc, item.style);
   }
-  for (const e of doc.edges) styleEdge(sheet, doc, e);
+  for (const e of doc.edges) styleEdge(sheet, doc, e, base);
 }
 
-function styleEdge(sheet: StyleSheet, doc: Document, e: Edge): void {
+function styleEdge(sheet: StyleSheet, doc: Document, e: Edge, base: number): void {
   const root = doc.root;
   const ge = root.attrs;
   const anc: Group[] = e.scope !== root ? [e.scope, ...ancestors(e.scope)] : [root];
@@ -257,6 +268,7 @@ function styleEdge(sheet: StyleSheet, doc: Document, e: Edge): void {
     else if (EDGE_OVERRIDES.includes(k)) st[k] = v;
   }
   e.style = sheet.resolveVars(st);
+  if (e.style["font-size"] !== undefined) e.style["font-size"] = relSize(e.style["font-size"], base);
   e.labelStyle = partStyle(sheet, "label", e, anc, e.style);
   if ("step" in e.attrs) e.stepStyle = partStyle(sheet, "step", e, anc, e.style);
 }
