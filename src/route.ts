@@ -55,6 +55,16 @@ function boundaryPoint(n: Item, tx: number, ty: number, shape: string): Pt {
   return [mx + dx * t, my + dy * t];
 }
 
+/** Where a via= path meets node `n` on its way to bend point `p`: straight out of the
+ * side facing `p` when `p` lines up with the node, else towards the centre. */
+function viaPort(n: Item, [x, y]: Pt): Pt {
+  const inX = n.ax <= x && x <= n.ax + n.w;
+  const inY = n.ay <= y && y <= n.ay + n.h;
+  if (inX && !inY) return [x, y < n.ay ? n.ay : n.ay + n.h];
+  if (inY && !inX) return [x < n.ax ? n.ax : n.ax + n.w, y];
+  return boundaryPoint(n, x, y, n.attrs.shape ?? "box");
+}
+
 export function port(n: Item, side: string): Pt {
   switch (side) {
     case "top":
@@ -388,6 +398,7 @@ export class Router {
     const d = flowDir(owner);
     const route = routeOf(e);
     const wps = [...e.waypoints];
+    if (e.attrs.via && wps.length) return [[viaPort(a, wps[0] as Pt), ...wps, viaPort(b, last(wps))], "free"];
     const off = this.offset.get(e.id) ?? 0;
     let ex = e.attrs.exit;
     let en = e.attrs.enter;

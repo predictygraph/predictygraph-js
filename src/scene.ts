@@ -16,10 +16,13 @@ import {
   type Style,
   walk,
 } from "./model.ts";
-import { type Diagonal, diagonalFrom, flowDir, lca, type Router, routeOf } from "./route.ts";
+import { type Diagonal, diagonalFrom, flowDir, lca, type Router, rounded, routeOf } from "./route.ts";
 import { fmtG, last, or } from "./safe.ts";
 import { box4, px } from "./style.ts";
 import { accent, fontSize, hasTitleBand, LINE_H, nodePadding, textBlock, titlePosition } from "./styleutil.ts";
+
+/** `layer=back` (attribute or CSS) draws a node under the edges, like a group. */
+const layer = (n: Node): string => n.attrs.layer || (n.style.layer as string | undefined) || "";
 
 const TITLE_PAD = 6;
 const ER_HEADS = ["one", "many", "zero-one", "zero-many", "one-many"];
@@ -168,11 +171,11 @@ export class SceneBuilder {
     const root = this.root;
     const edges = elem("group", { cls: "pdg-edges", children: this.doc.edges.map((e) => this.edge(e)) });
     const groups = elem("group", { cls: "pdg-groups", children: root.children.filter(isGroup).map((c) => this.group(c)) });
-    const nodes = elem("group", {
-      cls: "pdg-nodes",
-      children: [...walk(root)].filter((c): c is Node => !isGroup(c)).map((c) => this.node(c)),
-    });
+    const all = [...walk(root)].filter((c): c is Node => !isGroup(c));
+    const back = all.filter((c) => layer(c) === "back"); // layer=back: under the edges
+    const nodes = elem("group", { cls: "pdg-nodes", children: all.filter((c) => layer(c) !== "back").map((c) => this.node(c)) });
     const layers = [groups, edges, nodes];
+    if (back.length) layers.splice(1, 0, elem("group", { cls: "pdg-nodes pdg-back", children: back.map((c) => this.node(c)) }));
     const grid = this.grid();
     if (grid) layers.unshift(grid);
     if (this.titleLayer.children.length) layers.push(this.titleLayer);
@@ -511,7 +514,8 @@ export class SceneBuilder {
     const st = e.style;
     const R = this.router;
     const [pts0, axis] = R.geometry(e);
-    const route = routeOf(e);
+    const via = axis === "free" && !!e.attrs.via;
+    const route = via ? "straight" : routeOf(e);
     const color = st.stroke ?? "#4b5563";
     let width = px(st["stroke-width"], 1.5);
     if (e.body === "thick" && !("width" in e.attrs)) width *= 2.5;
@@ -547,6 +551,7 @@ export class SceneBuilder {
     const diag: Diagonal = diagonalFrom(st, route);
     const level = R.level(e);
     let segs = R.pathSegs(pts, axis, route, radius, stub, level, diag);
+    if (via && "radius" in st) segs = rounded([...pts], radius); // via paths are straight; radius= rounds the bends
     const poly = R.polyline(pts, axis, route, radius, stub, level, diag);
     this.edgePolys.set(e.id, poly);
 

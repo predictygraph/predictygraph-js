@@ -593,6 +593,19 @@ function alignX(doc: Document): void {
   }
 }
 
+/** `via="x,y x,y ..."` -> absolute points. Pairs split on spaces or ';'. */
+export function parseVia(spec: string, ox = 0, oy = 0): Pt[] {
+  return spec
+    .replaceAll(";", " ")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((pair): Pt => {
+      const v = pair.split(",").map(Number);
+      if (v.length !== 2 || v.some((n) => Number.isNaN(n))) throw new Error(`via: expected x,y pairs, got '${pair}'`);
+      return [ox + (v[0] as number), oy + (v[1] as number)];
+    });
+}
+
 export function layout(doc: Document): void {
   const root = doc.root;
   for (const e of doc.edges)
@@ -603,6 +616,12 @@ export function layout(doc: Document): void {
   layoutGroup(root, doc);
   absolutize(root, 0, 0);
   alignX(doc);
+  for (const e of doc.edges) {
+    // via="x,y x,y": fixed bend points in the root's at= frame
+    if (!e.attrs.via) continue;
+    e.waypoints = parseVia(e.attrs.via, root.ax + root.ox, root.ay + root.oy);
+    e.wpOwner = root;
+  }
   const groups = [root, ...[...walk(root)].filter(isGroup)];
   for (const g of groups) {
     const wps = g.layout?.waypoints;

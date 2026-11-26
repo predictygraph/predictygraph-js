@@ -32,3 +32,18 @@ describe("svg output snapshots", () => {
     });
   }
 });
+
+describe("via and layer", () => {
+  it("rejects a malformed via=", () => {
+    assert.throws(() => render('graph layout=fixed\na "A" at=0,0\nb "B" at=99,0\na -- b via="10;x"', { measurer: fixedMeasurer }), /via/);
+  });
+  it("layer=back from CSS draws the node before the edges", () => {
+    const svg = render(
+      'graph layout=fixed\ncss { node.bg { layer: back; } }\nbg "" .bg at=0,0 width=99 height=40\na "A" at=0,60\nb "B" at=80,60\na -> b',
+      {
+        measurer: fixedMeasurer,
+      },
+    );
+    assert.ok(svg.indexOf("pdg-back") < svg.indexOf("pdg-edges"));
+  });
+});
