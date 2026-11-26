@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="123" viewBox="0 0 500 123" class="predictygraph">
+<g class="pdg-groups">
+<g id="r" class="pdg-group bare">
+<rect x="16" y="73.5" width="468" height="33.5" rx="10" fill="none" stroke="none" stroke-width="1"/>
+</g>
+</g>
+<g class="pdg-edges">
+
+</g>
+<g class="pdg-nodes">
+<g id="top" class="pdg-node">
+<rect x="16" y="16" width="468" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="250" y="37.3" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Top</text>
+</g>
+<g id="a" class="pdg-node">
+<rect x="16" y="73.5" width="229" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="130.5" y="94.8" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">A</text>
+</g>
+<g id="b" class="pdg-node">
+<rect x="255" y="73.5" width="229" height="33.5" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="369.5" y="94.8" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">B</text>
+</g>
+</g>
+</svg>

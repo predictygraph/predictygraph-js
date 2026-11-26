@@ -135,8 +135,22 @@ function fillLine(g: Group, extra: number, horizontal = true): boolean {
     k[pos] += shift;
     k[size] += grow;
     shift += grow;
-    if (isGroup(k)) fillLine(k, grow, horizontal);
+    if (isGroup(k)) growBox(k, grow, horizontal);
   });
+  return true;
+}
+
+/** g was made `extra` wider (horizontal) or taller: let its content take the space,
+ * along the line (`justify=fill`) or across it (`align=stretch`, like CSS: a stretched
+ * column's children keep its width). Returns false when the content keeps its size. */
+function growBox(g: Group, extra: number, horizontal: boolean): boolean {
+  if (fillLine(g, extra, horizontal)) return true;
+  if (extra <= 0.01 || opt(g, "align", "center") !== "stretch" || opt(g, "layout", "row") !== (horizontal ? "column" : "row")) return false;
+  for (const k of g.children) {
+    if (horizontal) k.w += extra;
+    else k.h += extra;
+    if (isGroup(k)) growBox(k, extra, horizontal);
+  }
   return true;
 }
 
@@ -153,11 +167,11 @@ function lineLayout(g: Group, doc: Document): Pt {
       if (horizontal) {
         const grow = cross - k.h;
         k.h = cross;
-        if (isGroup(k)) fillLine(k, grow, false);
+        if (isGroup(k)) growBox(k, grow, false);
       } else {
         const grow = cross - k.w;
         k.w = cross;
-        if (isGroup(k) && !fillLine(k, grow) && opt(k, "justify", "start") === "center") k.ox += grow / 2;
+        if (isGroup(k) && !growBox(k, grow, true) && opt(k, "justify", "start") === "center") k.ox += grow / 2;
       }
     }
     const off = centered(align, cross - (horizontal ? k.h : k.w));
@@ -598,7 +612,7 @@ export function layoutGroup(g: Group, doc: Document): void {
   if (mw > g.w) {
     const grow = mw - g.w;
     g.w = mw;
-    if (!fillLine(g, grow)) g.ox += grow / 2;
+    if (!growBox(g, grow, true)) g.ox += grow / 2;
   }
   g.h = Math.max(g.h, mh);
 }

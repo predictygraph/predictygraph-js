@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2026 Reza Jelveh
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# A graph made wider (decktile: the column width) stretches its stretched tiers.
+graph layout=column align=stretch
+css { graph { min-width: 500px; } }
+top "Top"
+group r layout=row gap=10 justify=fill .bare { a "A"; b "B" }
