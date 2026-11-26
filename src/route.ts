@@ -471,7 +471,10 @@ export class Router {
         const [blo, bhi] = vert ? [b.ax, b.ax + b.w] : [b.ay, b.ay + b.h];
         const [lo, hi] = [Math.max(alo, blo), Math.min(ahi, bhi)];
         if (Math.abs((p0[i] as number) - (p1[i] as number)) > 0.5 && hi - lo >= 16) {
-          const m = Math.min(Math.max(((p0[i] as number) + (p1[i] as number)) / 2, lo + 8), hi - 8);
+          let m = Math.min(Math.max(((p0[i] as number) + (p1[i] as number)) / 2, lo + 8), hi - 8);
+          // one box spans the other: run through the narrower one's centre
+          const narrow = (vert ? a.w <= b.w : a.h <= b.h) ? a : b;
+          if (hi - lo >= (vert ? narrow.w : narrow.h) - 0.5) m = vert ? cx(narrow) : cy(narrow);
           p0 = vert ? [m, p0[1]] : [p0[0], m];
           p1 = vert ? [m, p1[1]] : [p1[0], m];
         }
