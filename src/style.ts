@@ -212,15 +212,17 @@ function numberSteps(doc: Document): void {
   for (const e of doc.edges) if (!("step" in e.attrs)) e.attrs.step = String(++n);
 }
 
+/** Box attributes written on the line (padding=0, fill=...): they win over CSS. */
+function boxAttrs(item: Item | Group): Style {
+  return Object.fromEntries(BOX_KEYS.filter((k) => k in item.attrs).map((k) => [k, item.attrs[k] as string]));
+}
+
 export function applyStyles(doc: Document): void {
   const sheet = new StyleSheet();
   for (const css of [BUILTIN_CSS, ...doc.stylesheets]) sheet.add(css);
   const root = doc.root;
   numberSteps(doc);
-  // box attributes on the graph line (padding=0, fill=...) win over CSS, like on any item
-  const rootSt: Style = sheet.compute(root, []);
-  for (const k of BOX_KEYS) if (k in root.attrs) rootSt[k] = root.attrs[k] as string;
-  root.style = sheet.resolveVars(rootSt);
+  root.style = sheet.resolveVars({ ...sheet.compute(root, []), ...boxAttrs(root) });
   root.partStyles = Object.fromEntries(["caption", "legend"].map((k) => [k, partStyle(sheet, k, root, [], root.style)]));
   const rootFont = root.style["font-family"] ?? "sans-serif";
   for (const b of doc.brackets) b.style = sheet.resolveVars({ "font-family": rootFont, ...sheet.compute(b, [root]) });
@@ -229,7 +231,7 @@ export function applyStyles(doc: Document): void {
     const parent = item.parent?.style ?? root.style;
     const st: Style = parent["font-family"] ? { "font-family": parent["font-family"] } : {};
     Object.assign(st, sheet.compute(item, anc));
-    for (const k of BOX_KEYS) if (k in item.attrs) st[k] = item.attrs[k] as string;
+    Object.assign(st, boxAttrs(item));
     item.style = sheet.resolveVars(st);
     if ("sub" in item.attrs) item.subStyle = partStyle(sheet, "sub", item, anc, item.style);
   }

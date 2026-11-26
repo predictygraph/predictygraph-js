@@ -29,6 +29,8 @@ const ROUND_SHAPES = ["circle", "ellipse", "diamond"];
 const shapeOf = (n: Item): string => n.attrs.shape ?? "box";
 export const routeOf = (e: Edge): string => e.style.route ?? "curve";
 export const spread = (e: Edge): boolean => (e.style.fan ?? "").trim() === "spread";
+/** An ortho edge that may merge into a fan-in/fan-out bus. */
+const busEdge = (e: Edge): boolean => routeOf(e) === "ortho" && !spread(e);
 
 export function lca(a: Item, b: Item, root: Group): Group {
   const bb = new Set<Item>([b, ...ancestors(b)]);
@@ -202,7 +204,7 @@ export class Router {
   fanBuses(): void {
     const fans = new Map<string, Edge[]>();
     for (const e of this.doc.edges) {
-      if (routeOf(e) !== "ortho" || spread(e) || e.waypoints.length) continue;
+      if (!busEdge(e) || e.waypoints.length) continue;
       for (const k of [`s\u0000${e.src}`, `d\u0000${e.dst}`]) fans.set(k, [...(fans.get(k) ?? []), e]);
     }
     for (const es of fans.values()) {
@@ -284,7 +286,7 @@ export class Router {
   /** Ortho fan-in/fan-out: edges sharing a target (or source) turn at one common level. */
   private sharedBends(): void {
     const geo = new Map<string, Geo>();
-    for (const e of this.doc.edges) if (routeOf(e) === "ortho" && !spread(e)) geo.set(e.id, this.geometry(e));
+    for (const e of this.doc.edges) if (busEdge(e)) geo.set(e.id, this.geometry(e));
     for (const key of ["dst", "src"] as const) {
       const buckets = new Map<string, Edge[]>();
       for (const e of this.doc.edges) {

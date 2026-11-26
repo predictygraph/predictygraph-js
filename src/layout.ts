@@ -57,8 +57,8 @@ export function sizeNode(n: Node, doc: Document): void {
   const bare = SQUARISH.includes(shape) && !n.textLines.length;
   const [minW, minH] = bare ? [0, 0] : [px(st["min-width"]), px(st["min-height"])];
   // width=/height= on the line, or CSS width/height: a minimum size like min-width
-  n.w = Math.max(n.w, minW, px(n.attrs.width ?? st.width));
-  n.h = Math.max(n.h, minH, px(n.attrs.height ?? st.height));
+  n.w = Math.max(n.w, minW, setSize(n, "width"));
+  n.h = Math.max(n.h, minH, setSize(n, "height"));
   if (SQUARISH.includes(shape)) n.w = n.h = Math.max(n.w, n.h);
 }
 
@@ -110,6 +110,9 @@ function labelGaps(g: Group, doc: Document, horizontal: boolean): Map<number, nu
   return need;
 }
 
+/** width=/height= on the line, else CSS width/height; 0 when unset. */
+const setSize = (item: Item, dim: "width" | "height"): number => px(item.attrs[dim] ?? item.style[dim]);
+
 /** `justify=fill` on a row/column: hand `extra` space along its main axis to the
  * children, smallest first, so they end up as equal as the space allows (later ones
  * shift). `horizontal` says which way g grew; a row fills width, a column height.
@@ -125,16 +128,12 @@ function fillLine(g: Group, extra: number, horizontal = true): boolean {
     level = (asc.slice(0, n).reduce((a, b) => a + b, 0) + extra) / n;
     if (n === asc.length || level <= (asc[n] as number)) break;
   }
+  const [pos, size] = horizontal ? (["x", "w"] as const) : (["y", "h"] as const);
   let shift = 0;
   g.children.forEach((k, i) => {
     const grow = Math.max(level - (sizes[i] as number), 0);
-    if (horizontal) {
-      k.x += shift;
-      k.w += grow;
-    } else {
-      k.y += shift;
-      k.h += grow;
-    }
+    k[pos] += shift;
+    k[size] += grow;
     shift += grow;
     if (isGroup(k)) fillLine(k, grow, horizontal);
   });
@@ -591,8 +590,8 @@ export function layoutGroup(g: Group, doc: Document): void {
   g.w = innerW + pl + pr + g.sideW;
   g.h = ch + pt + pb + g.labelH;
   // width=/height= (or CSS width/min-width) set a minimum box size; content stays centred
-  const mw = Math.max(px(g.attrs.width), px(g.style.width), px(g.style["min-width"]));
-  const mh = Math.max(px(g.attrs.height), px(g.style.height), px(g.style["min-height"]));
+  const mw = Math.max(setSize(g, "width"), px(g.style["min-width"]));
+  const mh = Math.max(setSize(g, "height"), px(g.style["min-height"]));
   if (mw > g.w) {
     const grow = mw - g.w;
     g.w = mw;
