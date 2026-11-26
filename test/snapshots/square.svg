@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="602" height="172" viewBox="0 0 601.9 172" class="predictygraph">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="602" height="172" viewBox="0 0 602.35 172" class="predictygraph">
 <g class="pdg-groups">
 <g id="pool" class="pdg-group">
 <rect x="230.15" y="16" width="175.2" height="140" rx="10" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
@@ -13,10 +13,10 @@
 <text x="183.86" y="89.58" text-anchor="middle" fill="#374151" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">bind</text>
 </g>
 <g id="e1" class="pdg-edge">
-<path d="M 405.35 86 L 476.73 86" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
-<polygon points="485.1,86 475.8,89.91 475.8,82.09" fill="#4b5563" class="pdg-head"/>
-<rect x="414.94" y="78.13" width="52.2" height="15.75" rx="3" fill="#ffffff" fill-opacity="0.9" class="pdg-label-bg"/>
-<text x="441.04" y="89.58" text-anchor="middle" fill="#374151" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">metrics</text>
+<path d="M 405.35 86 L 477.18 86" fill="none" stroke="#4b5563" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="485.55,86 476.25,89.91 476.25,82.09" fill="#4b5563" class="pdg-head"/>
+<rect x="415.16" y="78.13" width="52.2" height="15.75" rx="3" fill="#ffffff" fill-opacity="0.9" class="pdg-label-bg"/>
+<text x="441.26" y="89.58" text-anchor="middle" fill="#374151" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11" font-weight="normal" font-style="normal">metrics</text>
 </g>
 </g>
 <g class="pdg-nodes">
@@ -41,8 +41,8 @@
 <text x="360.55" y="129.8" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">L40S</text>
 </g>
 <g id="prom" class="pdg-node">
-<rect x="485.1" y="35.6" width="100.8" height="100.8" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
-<text x="535.5" y="90.55" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Prometheus</text>
+<rect x="485.55" y="35.6" width="100.8" height="100.8" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="535.95" y="90.55" text-anchor="middle" fill="#111827" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Prometheus</text>
 </g>
 </g>
 </svg>

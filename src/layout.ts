@@ -507,11 +507,14 @@ function layeredLayout(g: Group, doc: Document): Pt {
 
   const rankThick = order.map((layer) => Math.max(...layer.map(msz), 0));
   const extra = new Map(g.extraGap);
+  // labelled edges need a run long enough to carry the label: beside the bus (TB),
+  // or along the gap (LR), where the whole label width has to fit between the ranks
   for (const [a, b, e] of local) {
     if (!e.label) continue;
     const lh = px(e.style["font-size"], 11) * 1.25 * e.label.split("\n").length + 10;
+    const need = horizontal ? Math.max(lh, textBlock(e.label, or(e.labelStyle, e.style), 11, false).w + 34 - rankGap) : lh;
     const r = Math.min(rank.get(a.id) as number, rank.get(b.id) as number) - lo;
-    extra.set(r, Math.max(extra.get(r) ?? 0, lh));
+    extra.set(r, Math.max(extra.get(r) ?? 0, need));
   }
   let main = 0;
   const mainPos = rankThick.map((t, ri) => {
