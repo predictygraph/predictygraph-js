@@ -194,17 +194,18 @@ const EDGE_OVERRIDES = [...EDGE_KEYS, "stroke", "color", "stroke-dasharray", "fo
 
 /** Style for a text part (`label`, `sub`, `step`, `caption`, `legend`): owner's text keys, then CSS for `kind`.
  * Subtitles drop the owner's weight; `em`/`%` font sizes are relative to the owner's. */
-function partStyle(sheet: StyleSheet, kind: string, owner: Subject, anc: Subject[], inherit: Style): Style {
+function partStyle(sheet: StyleSheet, kind: string, owner: Subject, anc: Subject[], inherit: Style, rem = 0): Style {
   const base: Style = {};
   for (const k of TEXT_KEYS) if (k in inherit && !(kind === "sub" && k === "font-weight")) base[k] = inherit[k] as string;
   const st = sheet.resolveVars({ ...base, ...sheet.compute({ kind, classes: [...owner.classes] }, [owner, ...anc]) });
-  if (st["font-size"] !== undefined) st["font-size"] = relSize(st["font-size"], px(inherit["font-size"], 14));
+  if (st["font-size"] !== undefined) st["font-size"] = relSize(st["font-size"], px(inherit["font-size"], 14), rem);
   return st;
 }
 
 /** `em`/`%` font size -> px against `base`; any other value unchanged. */
-function relSize(value: string, base: number): string {
+function relSize(value: string, base: number, rem = 0): string {
   const fs = value.trim();
+  if (fs.endsWith("rem")) return `${((rem || base) * number(fs.slice(0, -3), 1, 0.1, 10)).toFixed(2)}px`;
   if (fs.endsWith("em")) return `${(base * number(fs.slice(0, -2), 1, 0.1, 10)).toFixed(2)}px`;
   if (fs.endsWith("%")) return `${((base * number(fs.slice(0, -1), 100, 10, 1000)) / 100).toFixed(2)}px`;
   return fs;
@@ -244,7 +245,7 @@ export function applyStyles(doc: Document): void {
     Object.assign(st, boxAttrs(item));
     item.style = sheet.resolveVars(st);
     if (item.style["font-size"] !== undefined) item.style["font-size"] = relSize(item.style["font-size"], base);
-    if ("sub" in item.attrs) item.subStyle = partStyle(sheet, "sub", item, anc, item.style);
+    if ("sub" in item.attrs) item.subStyle = partStyle(sheet, "sub", item, anc, item.style, base);
   }
   for (const e of doc.edges) styleEdge(sheet, doc, e, base);
 }
@@ -269,6 +270,6 @@ function styleEdge(sheet: StyleSheet, doc: Document, e: Edge, base: number): voi
   }
   e.style = sheet.resolveVars(st);
   if (e.style["font-size"] !== undefined) e.style["font-size"] = relSize(e.style["font-size"], base);
-  e.labelStyle = partStyle(sheet, "label", e, anc, e.style);
-  if ("step" in e.attrs) e.stepStyle = partStyle(sheet, "step", e, anc, e.style);
+  e.labelStyle = partStyle(sheet, "label", e, anc, e.style, base);
+  if ("step" in e.attrs) e.stepStyle = partStyle(sheet, "step", e, anc, e.style, base);
 }
