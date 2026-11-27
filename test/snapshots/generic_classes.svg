@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="494" height="239" viewBox="0 0 494.4 239.38" class="predictygraph">
-<rect x="0" y="0" width="494.4" height="239.38" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="494" height="315" viewBox="0 0 494.4 314.88" class="predictygraph">
+<rect x="0" y="0" width="494.4" height="314.88" fill="#ffffff"/>
 <g class="pdg-groups">
 <g id="req" class="pdg-group band">
 <rect x="8" y="8" width="478.4" height="100.38" rx="10" fill="#f6f8fa" stroke="none" stroke-width="1"/>
@@ -7,6 +7,9 @@
 </g>
 <g id="store" class="pdg-group open">
 <rect x="8" y="122.38" width="478.4" height="61.5" rx="10" fill="none" stroke="none" stroke-width="1"/>
+</g>
+<g id="jobs" class="pdg-group open">
+<rect x="8" y="197.88" width="478.4" height="61.5" rx="10" fill="none" stroke="none" stroke-width="1"/>
 </g>
 </g>
 <g class="pdg-edges">
@@ -33,7 +36,7 @@
 <text x="85.98" y="64.3" text-anchor="middle" fill="#1f2328" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Client</text>
 <text x="85.98" y="82.81" text-anchor="middle" fill="#656d76" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">browser or CLI</text>
 </g>
-<g id="api" class="pdg-node on-blue">
+<g id="api" class="pdg-node on-primary">
 <rect x="161.96" y="43" width="149.38" height="51.38" rx="6" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
 <text x="236.65" y="64.3" text-anchor="middle" fill="#ffffff" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">API gateway</text>
 <text x="236.65" y="82.81" text-anchor="middle" fill="#ffffff" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">auth, rate limits</text>
@@ -43,7 +46,7 @@
 <text x="387.32" y="64.3" text-anchor="middle" fill="#1f2328" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Service</text>
 <text x="387.32" y="82.81" text-anchor="middle" fill="#656d76" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">business logic</text>
 </g>
-<g id="db" class="pdg-node on-green">
+<g id="db" class="pdg-node on-positive">
 <rect x="22" y="136.38" width="112" height="33.5" rx="6" fill="#1a7f37" stroke="#1a7f37" stroke-width="1.5"/>
 <text x="78" y="157.68" text-anchor="middle" fill="#ffffff" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Primary DB</text>
 </g>
@@ -59,9 +62,21 @@
 <rect x="385.6" y="136.38" width="86.8" height="33.5" rx="6" fill="#ffffff" stroke="#656d76" stroke-width="1.2" stroke-dasharray="4 3"/>
 <text x="429" y="157.68" text-anchor="middle" fill="#656d76" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="400" font-style="normal">retired</text>
 </g>
+<g id="j1" class="pdg-node series-1">
+<rect x="22" y="211.88" width="70" height="33.5" rx="6" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
+<text x="57" y="233.18" text-anchor="middle" fill="#ffffff" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">batch</text>
+</g>
+<g id="j2" class="pdg-node series-2">
+<rect x="100" y="211.88" width="78.4" height="33.5" rx="6" fill="#1a7f37" stroke="#1a7f37" stroke-width="1.5"/>
+<text x="139.2" y="233.18" text-anchor="middle" fill="#ffffff" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">stream</text>
+</g>
+<g id="j3" class="pdg-node series-3">
+<rect x="186.4" y="211.88" width="78.4" height="33.5" rx="6" fill="#bc4c00" stroke="#bc4c00" stroke-width="1.5"/>
+<text x="225.6" y="233.18" text-anchor="middle" fill="#ffffff" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">replay</text>
+</g>
 <g id="note" class="pdg-node label quiet">
-<rect x="8" y="197.88" width="478.4" height="33.5" rx="6" fill="none" stroke="none" stroke-width="1.5"/>
-<text x="247.2" y="219.18" text-anchor="middle" fill="#656d76" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="400" font-style="normal">reads go to the cache first</text>
+<rect x="8" y="273.38" width="478.4" height="33.5" rx="6" fill="none" stroke="none" stroke-width="1.5"/>
+<text x="247.2" y="294.68" text-anchor="middle" fill="#656d76" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="400" font-style="normal">reads go to the cache first</text>
 </g>
 </g>
 </svg>
