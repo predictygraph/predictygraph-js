@@ -65,6 +65,7 @@ const WEIGHTS: Record<string, number> = { regular: 400, bold: 700, heavy: 900 };
 function utilityRules(pal: Record<string, string>): string[] {
   const sel = (c: string): string => `node.${c}, group.${c}, edge.${c}`;
   const out = [`${sel("fill-none")} { fill: none; }`, `${sel("stroke-none")} { stroke: none; }`];
+  pal = Object.fromEntries(Object.entries(pal).filter(([k]) => !k.startsWith("on-")));
   for (const k of Object.keys(pal)) {
     out.push(`node.fill-${k}, group.fill-${k} { fill: var(--${k}); }`);
     out.push(`${sel(`stroke-${k}`)} { stroke: var(--${k}); }`);
@@ -74,6 +75,54 @@ function utilityRules(pal: Record<string, string>): string[] {
     out.push(`node.sub-${k} sub, group.sub-${k} sub { color: var(--${k}); }`);
   }
   for (const [w, v] of Object.entries(WEIGHTS)) out.push(`${sel(w)} { font-weight: ${v}; }`);
+  return out;
+}
+
+// Generic classes every theme gets, written against the required palette names.
+const GENERIC: [string, string][] = [
+  ["label", "fill: none; stroke: none; font-weight: 400;"],
+  ["plain", "font-weight: 400; color: var(--fg);"],
+  ["strong", "font-weight: 700; color: var(--fg);"],
+  ["quiet", "font-weight: 400; color: var(--muted);"],
+  ["chip", "fill: var(--surface); stroke: none; font-weight: 400; color: var(--fg);"],
+  ["card", "fill: var(--bg); stroke: var(--border);"],
+  ["frame", "fill: var(--bg); stroke: var(--fg);"],
+  ["outline", "fill: none;"],
+  ["placeholder", "fill: var(--surface); stroke: var(--border);"],
+  ["ghost", "fill: var(--bg); stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 4 3; color: var(--muted); font-weight: 400;"],
+  ["band", "fill: var(--surface); stroke: none;"],
+  ["open", "fill: none; stroke: none;"],
+];
+const BOXES = ["chip", "card", "frame", "placeholder", "band"];
+
+const luminance = (hex: string): number => {
+  const ch = (i: number): number => {
+    const c = Number.parseInt(hex.slice(i, i + 2), 16) / 255;
+    return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+  };
+  return 0.2126 * ch(1) + 0.7152 * ch(3) + 0.0722 * ch(5);
+};
+const contrast = (a: string, b: string): number => {
+  const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x) as [number, number];
+  return (hi + 0.05) / (lo + 0.05);
+};
+
+/** Text colour on a `name` fill: palette `on-<name>` if set, else whichever of fg/bg contrasts more (bg on a tie). */
+function onColour(pal: Record<string, string>, name: string): string {
+  if (`on-${name}` in pal) return `on-${name}`;
+  const fill = pal[name] as string;
+  return contrast(fill, pal.fg as string) > contrast(fill, pal.bg as string) ? "fg" : "bg";
+}
+
+function genericRules(pal: Record<string, string>): string[] {
+  const out = GENERIC.map(([c, decl]) => `node.${c}, group.${c} { ${decl} }`);
+  out.push(`${BOXES.map((c) => `node.${c} sub`).join(", ")} { color: var(--muted); }`);
+  for (const k of Object.keys(pal)) {
+    if (k.startsWith("on-")) continue;
+    const t = onColour(pal, k);
+    out.push(`node.on-${k}, group.on-${k} { fill: var(--${k}); stroke: var(--${k}); color: var(--${t}); }`);
+    out.push(`node.on-${k} sub, group.on-${k} sub { color: var(--${t}); }`);
+  }
   return out;
 }
 
@@ -138,6 +187,7 @@ export function themeCss(name: string): string {
   }
   lines.push("node.solid { fill: var(--fg); stroke: var(--fg); color: var(--bg); }");
   if (shape["edge-width"] !== undefined) lines.push(`edge { stroke-width: ${shape["edge-width"]}; }`);
+  lines.push(...genericRules(pal));
   lines.push(...classRules(t.classes ?? {}, pal, name));
   if (t.css) lines.push(t.css);
   if (t.utilities) lines.push(...utilityRules(pal)); // last, so a utility class wins over the theme's own rules

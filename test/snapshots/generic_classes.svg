@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="494" height="239" viewBox="0 0 494.4 239.38" class="predictygraph">
+<rect x="0" y="0" width="494.4" height="239.38" fill="#ffffff"/>
+<g class="pdg-groups">
+<g id="req" class="pdg-group band">
+<rect x="8" y="8" width="478.4" height="100.38" rx="10" fill="#f6f8fa" stroke="none" stroke-width="1"/>
+<text x="22" y="33.4" text-anchor="start" fill="#656d76" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="12" font-weight="bold" font-style="normal">Request path</text>
+</g>
+<g id="store" class="pdg-group open">
+<rect x="8" y="122.38" width="478.4" height="61.5" rx="10" fill="none" stroke="none" stroke-width="1"/>
+</g>
+</g>
+<g class="pdg-edges">
+<g id="e0" class="pdg-edge">
+<path d="M 149.96 68.69 C 151.77 68.69 151.77 68.69 153.59 68.69" fill="none" stroke="#656d76" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="161.96,68.69 152.66,72.59 152.66,64.78" fill="#656d76" class="pdg-head"/>
+</g>
+<g id="e1" class="pdg-edge">
+<path d="M 311.34 68.69 C 313.15 68.69 313.15 68.69 314.97 68.69" fill="none" stroke="#656d76" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="323.34,68.69 314.04,72.59 314.04,64.78" fill="#656d76" class="pdg-head"/>
+</g>
+<g id="e2" class="pdg-edge">
+<path d="M 378.32 94.38 C 378.32 111.19 78 111.19 78 128" fill="none" stroke="#656d76" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="78,136.38 74.09,127.08 81.91,127.08" fill="#656d76" class="pdg-head"/>
+</g>
+<g id="e3" class="pdg-edge">
+<path d="M 396.32 94.38 C 396.32 111.19 181 111.19 181 128" fill="none" stroke="#656d76" stroke-linejoin="round" stroke-width="1.5" stroke-linecap="butt" class="pdg-line"/>
+<polygon points="181,136.38 177.09,127.08 184.91,127.08" fill="#656d76" class="pdg-head"/>
+</g>
+</g>
+<g class="pdg-nodes">
+<g id="client" class="pdg-node card">
+<rect x="22" y="43" width="127.96" height="51.38" rx="6" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+<text x="85.98" y="64.3" text-anchor="middle" fill="#1f2328" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Client</text>
+<text x="85.98" y="82.81" text-anchor="middle" fill="#656d76" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">browser or CLI</text>
+</g>
+<g id="api" class="pdg-node on-blue">
+<rect x="161.96" y="43" width="149.38" height="51.38" rx="6" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
+<text x="236.65" y="64.3" text-anchor="middle" fill="#ffffff" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">API gateway</text>
+<text x="236.65" y="82.81" text-anchor="middle" fill="#ffffff" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">auth, rate limits</text>
+</g>
+<g id="svc" class="pdg-node frame">
+<rect x="323.34" y="43" width="127.96" height="51.38" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="1.5"/>
+<text x="387.32" y="64.3" text-anchor="middle" fill="#1f2328" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Service</text>
+<text x="387.32" y="82.81" text-anchor="middle" fill="#656d76" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="11.9" font-weight="normal" font-style="normal">business logic</text>
+</g>
+<g id="db" class="pdg-node on-green">
+<rect x="22" y="136.38" width="112" height="33.5" rx="6" fill="#1a7f37" stroke="#1a7f37" stroke-width="1.5"/>
+<text x="78" y="157.68" text-anchor="middle" fill="#ffffff" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">Primary DB</text>
+</g>
+<g id="cache" class="pdg-node chip">
+<rect x="146" y="136.38" width="70" height="33.5" rx="6" fill="#f6f8fa" stroke="none" stroke-width="1.5"/>
+<text x="181" y="157.68" text-anchor="middle" fill="#1f2328" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="400" font-style="normal">Cache</text>
+</g>
+<g id="spare" class="pdg-node placeholder">
+<rect x="228" y="136.38" width="145.6" height="33.5" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text x="300.8" y="157.68" text-anchor="middle" fill="#1f2328" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="normal" font-style="normal">spare capacity</text>
+</g>
+<g id="old" class="pdg-node ghost">
+<rect x="385.6" y="136.38" width="86.8" height="33.5" rx="6" fill="#ffffff" stroke="#656d76" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="429" y="157.68" text-anchor="middle" fill="#656d76" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="400" font-style="normal">retired</text>
+</g>
+<g id="note" class="pdg-node label quiet">
+<rect x="8" y="197.88" width="478.4" height="33.5" rx="6" fill="none" stroke="none" stroke-width="1.5"/>
+<text x="247.2" y="219.18" text-anchor="middle" fill="#656d76" font-family="Roboto, Arial, &quot;Helvetica Neue&quot;, sans-serif" font-size="14" font-weight="400" font-style="normal">reads go to the cache first</text>
+</g>
+</g>
+</svg>
