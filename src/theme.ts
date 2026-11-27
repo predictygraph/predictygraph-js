@@ -5,7 +5,49 @@ export interface ThemeData {
   palette?: Record<string, string>;
   roles?: Record<string, string>;
   shape?: Record<string, string | number>;
+  classes?: Record<string, Record<string, string>>;
   css?: string;
+}
+
+/** Palette values are #rrggbb or the name of another palette entry (`edge = "ink"`). */
+function resolveAliases(pal: Record<string, string>, name: string): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const [k, v0] of Object.entries(pal)) {
+    let v = v0;
+    const seen = new Set([k]);
+    while (v in pal && !seen.has(v)) {
+      seen.add(v);
+      v = pal[v] as string;
+    }
+    if (!/^#[0-9a-fA-F]{6}$/.test(v))
+      throw new Error(`theme ${JSON.stringify(name)}: palette.${k} must be #rrggbb or a palette name, got ${JSON.stringify(v0)}`);
+    out[k] = v;
+  }
+  return out;
+}
+
+const CLASS_KEYS = new Set(["fill", "stroke", "color", "sub", "edge", "title-fill"]);
+
+/** `[classes] lime = { fill, stroke, color, title-fill, sub, edge }` -> node/group/sub/edge rules. */
+function classRules(classes: Record<string, Record<string, string>>, pal: Record<string, string>, name: string): string[] {
+  const lines: string[] = [];
+  for (const [cls, spec] of Object.entries(classes)) {
+    if (Object.keys(spec).some((k) => !CLASS_KEYS.has(k)))
+      throw new Error(`theme ${JSON.stringify(name)}: classes.${cls} keys must be among ${[...CLASS_KEYS].sort().join(", ")}`);
+    const val = Object.fromEntries(Object.entries(spec).map(([k, v]) => [k, v in pal ? `var(--${v})` : v]));
+    const box = Object.fromEntries(["fill", "stroke", "color", "title-fill"].filter((k) => k in val).map((k) => [k, val[k] as string]));
+    if ("fill" in box) box.stroke ??= box.fill as string;
+    if (Object.keys(box).length)
+      lines.push(
+        `node.${cls}, group.${cls} { ${Object.entries(box)
+          .map(([k, v]) => `${k}: ${v};`)
+          .join(" ")} }`,
+      );
+    if ("sub" in val) lines.push(`node.${cls} sub { color: ${val.sub}; }`);
+    const c = val.edge ?? val.fill;
+    if (c !== undefined) lines.push(`edge.${cls} { stroke: ${c}; color: ${c}; }`);
+  }
+  return lines;
 }
 
 const HUES = ["red", "orange", "yellow", "green", "cyan", "blue", "purple"];
@@ -39,7 +81,7 @@ const mix = (a: string, b: string, t: number): string => {
 export function themeCss(name: string): string {
   const t = THEMES[name];
   if (!t) throw new Error(`unknown theme ${JSON.stringify(name)} (available: ${listThemes().join(", ")})`);
-  const pal = { ...t.palette };
+  const pal = resolveAliases({ ...t.palette }, name);
   const missing = REQUIRED.filter((k) => !(k in pal));
   if (missing.length) throw new Error(`theme ${JSON.stringify(name)} palette missing: ${missing.join(", ")}`);
   const at = (k: string): string => pal[k] as string;
@@ -69,6 +111,7 @@ export function themeCss(name: string): string {
   }
   lines.push("node.solid { fill: var(--fg); stroke: var(--fg); color: var(--bg); }");
   if (shape["edge-width"] !== undefined) lines.push(`edge { stroke-width: ${shape["edge-width"]}; }`);
+  lines.push(...classRules(t.classes ?? {}, pal, name));
   if (t.css) lines.push(t.css);
   return `${lines.join("\n")}\n`;
 }
