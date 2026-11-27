@@ -36,7 +36,9 @@ function classRules(classes: Record<string, Record<string, string | number>>, pa
   for (const [cls, spec] of Object.entries(classes)) {
     if (Object.keys(spec).some((k) => !CLASS_KEYS.has(k)))
       throw new Error(`theme ${JSON.stringify(name)}: classes.${cls} keys must be among ${[...CLASS_KEYS].sort().join(", ")}`);
-    const val = Object.fromEntries(Object.entries(spec).map(([k, v]) => [k, typeof v === "string" && v in pal ? `var(--${v})` : String(v)]));
+    const val = Object.fromEntries(
+      Object.entries(spec).map(([k, v]) => [k, typeof v === "string" && v in pal ? `var(--${v})` : String(v)]),
+    );
     const box = Object.fromEntries(BOX_KEYS.filter((k) => k in val).map((k) => [k, val[k] as string]));
     if ("fill" in box) box.stroke ??= box.fill as string;
     if (Object.keys(box).length)
@@ -45,7 +47,10 @@ function classRules(classes: Record<string, Record<string, string | number>>, pa
           .map(([k, v]) => `${k}: ${v};`)
           .join(" ")} }`,
       );
-    const SUB: [string, string][] = [["color", "sub"], ["font-weight", "sub-weight"]];
+    const SUB: [string, string][] = [
+      ["color", "sub"],
+      ["font-weight", "sub-weight"],
+    ];
     const sub = SUB.filter(([, s]) => s in val).map(([k, s]) => `${k}: ${val[s]};`);
     if (sub.length) lines.push(`node.${cls} sub { ${sub.join(" ")} }`);
     const c = val.edge ?? val.fill;
